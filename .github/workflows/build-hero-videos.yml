@@ -24,7 +24,7 @@ jobs:
           mkdir -p assets/videos assets/images assets/media-sources
 
           # Stock video sources — Pixabay/Pexels free-use media.
-          curl -L --fail -o assets/videos/home-hero.mp4 'https://videos.pexels.com/video-files/35503528/15040489_1920_1080_30fps.mp4'
+          curl -L --fail --retry 6 --retry-delay 5 --retry-all-errors -A 'Mozilla/5.0 AmethystMediaBot/1.0' -o assets/videos/home-hero.mp4 'https://videos.pexels.com/video-files/35503528/15040489_1920_1080_30fps.mp4'
           curl -L --fail -o assets/videos/tours-hero.mp4 'https://cdn.pixabay.com/video/2026/04/15/346494_large.mp4'
           curl -L --fail -o assets/videos/yatras-hero.mp4 'https://cdn.pixabay.com/video/2015/08/13/442-136215984_large.mp4'
           curl -L --fail -o assets/videos/retreats-hero.mp4 'https://cdn.pixabay.com/video/2025/07/31/294617_large.mp4'
@@ -48,10 +48,6 @@ jobs:
             ffmpeg -y -i "$src" -vf "scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080" -an -c:v libx264 -crf 24 -preset medium -movflags +faststart "$tmp"
             mv "$tmp" "$src"
           }
-          normalize assets/videos/tours-hero.mp4 assets/videos/tours-normalized.mp4
-          normalize assets/videos/yatras-hero.mp4 assets/videos/yatras-normalized.mp4
-          normalize assets/videos/retreats-hero.mp4 assets/videos/retreats-normalized.mp4
-          normalize assets/videos/surprises-hero.mp4 assets/videos/surprises-normalized.mp4
       - name: Save media manifest
         run: |
           cat > assets/media-sources/README.md <<'EOF'
