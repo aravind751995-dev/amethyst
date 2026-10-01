@@ -87,4 +87,5 @@ jobs:
           git add assets/videos assets/images assets/media-sources/README.md
           git diff --cached --quiet && exit 0
           git commit -m "Add self-hosted stock hero videos and destination images [skip ci]"
+          git pull --rebase origin main
           git push
