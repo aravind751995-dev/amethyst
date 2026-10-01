@@ -1,1 +1,0 @@
-Source images are downloaded by the GitHub Actions build and are not required to be served to visitors. Generated hero MP4 files live in /assets/videos/.
