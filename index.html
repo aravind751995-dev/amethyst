@@ -120,7 +120,13 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rg
 .uses span{border:1px solid var(--line);padding:7px 16px;font-size:13px;color:var(--mute)}
 .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
 .r{border:1px solid var(--line);background:var(--bg)}
-.r .ph{aspect-ratio:16/10}
+.r .ph{aspect-ratio:16/9;background:linear-gradient(145deg,#f8f5fa 0%,#fff 48%,#f0eaf3 100%);border-bottom:1px solid var(--line)}
+.r .ph .scene{inset:-3%;background-repeat:no-repeat!important;background-size:116% auto!important;background-position:center 54%!important;transition:transform .7s ease,background-size .7s ease}
+.r:hover .ph .scene{transform:scale(1.025);background-size:120% auto!important}
+.r:first-child .ph .scene{background-position:center 55%!important}
+.r:nth-child(2) .ph .scene{background-position:center 53%!important}
+.r .ph:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(59,10,90,.035));z-index:1;pointer-events:none}
+.r .ph:after{content:"";position:absolute;left:22px;right:22px;bottom:16px;height:1px;background:linear-gradient(90deg,transparent,rgba(59,10,90,.12),transparent);pointer-events:none}
 .r .body{padding:24px}
 .r h3{font-size:22px;letter-spacing:.06em}
 .r .sm{font-size:14px;color:var(--mute);margin:6px 0 14px}
@@ -197,7 +203,7 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opac
 .rv{opacity:0;transform:translateY(16px);transition:opacity .8s,transform .8s}
 .rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
-.media-credit{max-width:1180px;margin:28px auto 0;padding:18px 24px 0;border-top:1px solid rgba(255,255,255,.1);font-size:11px;line-height:1.7;color:#9a8fa5}.media-frame,.photo,.frame .ph{overflow:hidden}.photo{height:auto;aspect-ratio:16/10;background-size:cover;background-position:center}.ph .scene{background-size:cover;background-position:center}.hero .ph{height:100%;aspect-ratio:auto}.frame{aspect-ratio:16/9}.ig .ph{aspect-ratio:1/1;min-height:0}.r .ph{aspect-ratio:16/10;height:auto}</style>
+.media-credit{max-width:1180px;margin:28px auto 0;padding:18px 24px 0;border-top:1px solid rgba(255,255,255,.1);font-size:11px;line-height:1.7;color:#9a8fa5}.media-frame,.photo,.frame .ph{overflow:hidden}.photo{height:auto;aspect-ratio:16/10;background-size:cover;background-position:center}.ph .scene{background-size:cover;background-position:center}.hero .ph{height:100%;aspect-ratio:auto}.frame{aspect-ratio:16/9}.ig .ph{aspect-ratio:1/1;min-height:0}.r .ph{aspect-ratio:16/9;height:auto}</style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute"><defs>
@@ -251,8 +257,8 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opac
 <div class="uses"><span>Family trips</span><span>Corporate travel</span><span>Temple journeys</span><span>Outstation</span><span>Weddings</span><span>Airport transfers</span><span>Group tours</span><span>Private holidays</span></div>
 </div>
 <div class="rgrid">
-<article class="r rv"><div class="ph s-van" style="aspect-ratio:16/10"><div class="scene" style="background-image:url('https://www.forcemotors.com/wp-content/uploads/2025/02/Traveller-Wider-Body-SWB-12D13D-Banner_1.webp');background-color:#fff;background-size:contain;background-repeat:no-repeat;background-position:center"></div></div><div class="body"><h3>FORCE TRAVELLER</h3><p class="sm">AC Force Traveller rentals in Chennai using the Traveller N platform shown here, suitable for family trips, temple groups, corporate travel and outstation journeys.</p><ul><li>12/13/14+D configurations</li><li>AC available</li><li>High-back seating</li><li>Experienced driver</li><li>Chennai local &amp; outstation</li><li>Private group travel</li></ul><a class="link" href="#rentals">ENQUIRE FOR TRAVELLER →</a></div></article>
-<article class="r rv"><div class="ph s-van" style="aspect-ratio:16/10"><div class="scene" style="background-image:url('https://www.forcemotors.com/wp-content/uploads/2026/07/urbania-menu.png.webp');background-color:#fff;background-size:contain;background-repeat:no-repeat;background-position:center"></div></div><div class="body"><h3>FORCE URBANIA</h3><p class="sm">Premium Force Urbania rentals in Chennai for corporate travel, family holidays, airport transfers, weddings and long-distance journeys.</p><ul><li>Premium AC shared mobility</li><li>Reclining seating options</li><li>Individual AC vents</li><li>Spacious cabin</li><li>Professional driver</li><li>Chennai local &amp; outstation</li></ul><a class="link" href="#rentals">ENQUIRE FOR URBANIA →</a></div></article>
+<article class="r rv"><div class="ph s-van"><div class="scene" style="background-image:url('https://www.forcemotors.com/wp-content/uploads/2025/02/Traveller-Wider-Body-SWB-12D13D-Banner_1.webp');background-color:#fff"></div></div><div class="body"><h3>FORCE TRAVELLER</h3><p class="sm">AC Force Traveller rentals in Chennai using the Traveller N platform shown here, suitable for family trips, temple groups, corporate travel and outstation journeys.</p><ul><li>12/13/14+D configurations</li><li>AC available</li><li>High-back seating</li><li>Experienced driver</li><li>Chennai local &amp; outstation</li><li>Private group travel</li></ul><a class="link" href="#rentals">ENQUIRE FOR TRAVELLER →</a></div></article>
+<article class="r rv"><div class="ph s-van"><div class="scene" style="background-image:url('https://www.forcemotors.com/wp-content/uploads/2026/07/urbania-menu.png.webp');background-color:#fff"></div></div><div class="body"><h3>FORCE URBANIA</h3><p class="sm">Premium Force Urbania rentals in Chennai for corporate travel, family holidays, airport transfers, weddings and long-distance journeys.</p><ul><li>Premium AC shared mobility</li><li>Reclining seating options</li><li>Individual AC vents</li><li>Spacious cabin</li><li>Professional driver</li><li>Chennai local &amp; outstation</li></ul><a class="link" href="#rentals">ENQUIRE FOR URBANIA →</a></div></article>
 </div>
 <div class="rfoot rv"><a class="btn dark" href="https://wa.me/919363402164?text=Hi%20Amethyst%2C%20I%27d%20like%20a%20rental%20quote" target="_blank" rel="noopener">GET RENTAL QUOTE</a><span style="color:var(--mute);font-size:14px">Available for Chennai local and outstation travel.</span></div>
 </div></section>
@@ -369,7 +375,7 @@ document.getElementById("ig").innerHTML=GRID.map((c,i)=>{const g=MEDIA.gallery[i
 const T="TRAVEL  •  YATRAS  •  RETREATS  •  SURPRISES  •  ";document.getElementById("band").textContent=T.repeat(8);
 if(MEDIA.heroVideo){const v=document.getElementById("heroVid");v.src=MEDIA.heroVideo;if(MEDIA.heroPoster)v.poster=MEDIA.heroPoster;v.hidden=false;v.muted=true;v.play().catch(()=>{});document.querySelector(".hero").classList.add("hasmedia")}
 else if(MEDIA.heroPoster){document.getElementById("heroScene").style.background=`linear-gradient(180deg,rgba(33,6,50,.45),rgba(24,4,36,.88)),url('${MEDIA.heroPoster}') center/cover`}
-MEDIA.rentals.forEach((u,i)=>{const e=document.querySelectorAll(".r .scene")[i];if(e&&u){e.style.background=`url('${u}') center/cover`;e.style.filter="none"}});
+MEDIA.rentals.forEach((u,i)=>{const e=document.querySelectorAll(".r .scene")[i];if(e&&u){e.style.backgroundImage=`url('${u}')`;e.style.filter="none"}});
 if(MEDIA.filmPoster)document.querySelector("#filmPh .scene").style.background=`linear-gradient(rgba(33,6,50,.3),rgba(33,6,50,.5)),url('${MEDIA.filmPoster}') center/cover`;
 document.getElementById("play").onclick=function(){if(!MEDIA.film){this.insertAdjacentHTML("afterend",'<p style="position:absolute;bottom:18px;left:0;right:0;text-align:center;font-size:13px;color:#e3c56e">Add your film in MEDIA.film</p>');this.remove();return}
 const f=document.getElementById("film");f.innerHTML=`<video src="${MEDIA.film}" controls autoplay playsinline style="width:100%;height:100%;object-fit:cover"></video>`};
