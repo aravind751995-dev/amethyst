@@ -27,8 +27,8 @@ jobs:
           curl -L --fail --retry 6 --retry-delay 5 --retry-all-errors -A 'Mozilla/5.0 AmethystMediaBot/1.0' -o assets/videos/home-hero.mp4 'https://videos.pexels.com/video-files/35503528/15040489_1920_1080_30fps.mp4'
           curl -L --fail -o assets/videos/tours-hero.mp4 'https://cdn.pixabay.com/video/2026/04/15/346494_large.mp4'
           curl -L --fail -o assets/videos/yatras-hero.mp4 'https://cdn.pixabay.com/video/2015/08/13/442-136215984_large.mp4'
-          curl -L --fail -o assets/videos/retreats-hero.mp4 'https://cdn.pixabay.com/video/2025/07/31/294617_large.mp4'
-          curl -L --fail -o assets/videos/surprises-hero.mp4 'https://cdn.pixabay.com/video/2024/12/25/248655_large.mp4'
+          curl -L --fail -o assets/videos/retreats-hero.mp4 'https://cdn.pixabay.com/video/2022/03/11/110108_large.mp4'
+          curl -L --fail -o assets/videos/surprises-hero.mp4 'https://cdn.pixabay.com/video/2023/01/15/146578_large.mp4'
 
           # Local copies of all destination, rental and experience images used by the site.
           download() { curl -L --fail --retry 6 --retry-delay 5 --retry-all-errors -A 'Mozilla/5.0 AmethystMediaBot/1.0' -o "$2" "$1"; }
