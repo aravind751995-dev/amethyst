@@ -59,8 +59,7 @@ jobs:
           - Surprises: Pixabay AI-generated birthday/celebration footage
 
           Images:
-          - Destination-specific Wikimedia Commons files
-          - Chennai and celebration imagery from Pexels
+          - Chennai, nature, travel, celebration and retreat imagery from Pexels
 
           The site serves the resulting files from the repository itself, so visitors do not load YouTube embeds or third-party video players.
           EOF
