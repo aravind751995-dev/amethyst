@@ -79,9 +79,9 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rg
 .ph .tag{position:absolute;left:14px;bottom:12px;font-size:10px;letter-spacing:.14em;color:rgba(255,255,255,.7)}
 /* hero */
 .hero{position:relative;min-height:calc(100svh - 72px);display:flex;align-items:flex-end;color:#fff;padding:0}
-.hero .ph{position:absolute;inset:0}
-.hero .scene{background:linear-gradient(180deg,rgba(59,10,90,.55) 0%,rgba(59,10,90,.35) 40%,rgba(33,6,50,.9) 100%),linear-gradient(120deg,#5B1685,#c58a6a 70%,#E3C56E)}
-.hero .in{position:relative;padding:120px 24px 72px;max-width:1180px;margin:0 auto;width:100%}
+
+.hero .scene{background:linear-gradient(180deg,rgba(59,10,90,.18),rgba(24,4,36,.72))}
+.hero #heroVid{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover;z-index:0;pointer-events:none}.hero .ph:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(59,10,90,.28),rgba(24,4,36,.82));z-index:1;pointer-events:none}.hero .in{position:relative;padding:120px 24px 72px;max-width:1180px;margin:0 auto;width:100%}
 .hero h1{font-family:'Playfair Display',serif;font-size:clamp(42px,8vw,96px);line-height:1.02;font-weight:600;max-width:900px;text-wrap:balance}
 .hero p.sub{max-width:560px;margin:24px 0 36px;color:rgba(255,255,255,.88);font-size:17px}
 .hero .eyebrow{color:var(--soft);margin-bottom:22px;display:block}
@@ -203,7 +203,7 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opac
 .rv{opacity:0;transform:translateY(16px);transition:opacity .8s,transform .8s}
 .rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
-.media-credit{max-width:1180px;margin:28px auto 0;padding:18px 24px 0;border-top:1px solid rgba(255,255,255,.1);font-size:11px;line-height:1.7;color:#9a8fa5}.media-frame,.photo,.frame .ph{overflow:hidden}.photo{height:auto;aspect-ratio:16/10;background-size:cover;background-position:center}.ph .scene{background-size:cover;background-position:center}.hero .ph{height:100%;aspect-ratio:auto}.frame{aspect-ratio:16/9}.ig .ph{aspect-ratio:1/1;min-height:0}.r .ph{aspect-ratio:16/9;height:auto}</style>
+.media-credit{max-width:1180px;margin:28px auto 0;padding:18px 24px 0;border-top:1px solid rgba(255,255,255,.1);font-size:11px;line-height:1.7;color:#9a8fa5}.media-frame,.photo,.frame .ph{overflow:hidden}.photo{height:auto;aspect-ratio:16/10;background-size:cover;background-position:center}.ph .scene{background-size:cover;background-position:center}.frame{aspect-ratio:16/9}.ig .ph{aspect-ratio:1/1;min-height:0}.r .ph{aspect-ratio:16/9;height:auto}</style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute"><defs>
@@ -222,7 +222,7 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opac
 
 <main id="top">
 <section class="hero" style="padding:0">
-<div class="ph s-tour"><video id="heroVid" muted loop playsinline preload="metadata" aria-hidden="true" hidden></video><div class="scene" id="heroScene"></div><svg class="sil"><use href="#mtn"/></svg></div>
+<div class="ph s-tour"><iframe id="heroVid" src="https://www.youtube.com/embed/xMPrVjVqVyE?autoplay=1&mute=1&loop=1&playlist=xMPrVjVqVyE&controls=0&rel=0&modestbranding=1&playsinline=1" title="Chennai City Tour 2025 — Marina & Besant Nagar • 4K Travel Vlog" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" aria-hidden="true"></iframe><div class="scene" id="heroScene"></div><svg class="sil"><use href="#mtn"/></svg></div>
 <div class="in">
 <span class="eyebrow fade">TRAVEL • YATRAS • RETREATS • SURPRISES</span>
 <h1 class="fade" style="animation-delay:.15s">Make Every Journey Extraordinary.</h1>
@@ -342,7 +342,7 @@ const EXPERIENCES=[
 const GRID=["s-yatra","s-tour","s-retreat","s-tour","s-surprise","s-retreat","s-yatra","s-tour"];
 /* ===== MEDIA: paste photo/video paths (self-hosted: "images/hero.jpg", "videos/hero.mp4") or data: URIs ===== */
 const MEDIA={
-heroVideo:"https://videos.pexels.com/video-files/35503528/15040489_1920_1080_30fps.mp4",
+
 heroPoster:"https://images.pexels.com/photos/21005752/pexels-photo-21005752.jpeg?auto=compress&cs=tinysrgb&w=2200",
 film:"https://www.youtube.com/embed/1UXOBLMufyw?rel=0",
 filmPoster:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Siruvapuri%20Sri%20Murugan%20Temple.jpg",
@@ -373,8 +373,7 @@ document.getElementById("verticals").innerHTML=VERTICALS.map((v,i)=>`<article cl
 document.getElementById("egrid").innerHTML=EXPERIENCES.map(e=>`<article class="e rv"><div class="ph ${e.cls}"><div class="scene" ${bg(e.img)}></div>${e.img?"":sil}</div><div class="body"><div class="cat">${e.cat.toUpperCase()}</div><h3>${e.name}</h3><p>${e.d}</p><div class="meta"><span>${e.dur}<br><span style="color:var(--mute);font-size:12px">from</span> <b>${e.price}</b></span><a class="link" href="${WA}${encodeURIComponent("Hi Amethyst, I'd like details on "+e.name)}" target="_blank" rel="noopener">ENQUIRE</a></div></div></article>`).join("");
 document.getElementById("ig").innerHTML=GRID.map((c,i)=>{const g=MEDIA.gallery[i];return `<div class="ph ${c}" ${g?`data-full="${g}"`:""}><div class="scene" ${bg(g)}></div></div>`}).join("");
 const T="TRAVEL  •  YATRAS  •  RETREATS  •  SURPRISES  •  ";document.getElementById("band").textContent=T.repeat(8);
-if(MEDIA.heroVideo){const v=document.getElementById("heroVid");v.src=MEDIA.heroVideo;if(MEDIA.heroPoster)v.poster=MEDIA.heroPoster;v.hidden=false;v.muted=true;v.play().catch(()=>{});document.querySelector(".hero").classList.add("hasmedia")}
-else if(MEDIA.heroPoster){document.getElementById("heroScene").style.background=`linear-gradient(180deg,rgba(33,6,50,.45),rgba(24,4,36,.88)),url('${MEDIA.heroPoster}') center/cover`}
+document.getElementById("heroVid").hidden=false;document.querySelector(".hero").classList.add("hasmedia");
 MEDIA.rentals.forEach((u,i)=>{const e=document.querySelectorAll(".r .scene")[i];if(e&&u){e.style.backgroundImage=`url('${u}')`;e.style.filter="none"}});
 if(MEDIA.filmPoster)document.querySelector("#filmPh .scene").style.background=`linear-gradient(rgba(33,6,50,.3),rgba(33,6,50,.5)),url('${MEDIA.filmPoster}') center/cover`;
 document.getElementById("play").onclick=function(){if(!MEDIA.film){this.insertAdjacentHTML("afterend",'<p style="position:absolute;bottom:18px;left:0;right:0;text-align:center;font-size:13px;color:#e3c56e">Add your film in MEDIA.film</p>');this.remove();return}
