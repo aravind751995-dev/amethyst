@@ -21,7 +21,12 @@ jobs:
         shell: bash
         run: |
           set -e
-          mkdir -p assets/videos
+          mkdir -p assets/videos assets/video-sources
+          curl -L --fail -o assets/video-sources/home.jpg 'https://images.pexels.com/photos/34079316/pexels-photo-34079316.jpeg?auto=compress&cs=tinysrgb&w=1800'
+          curl -L --fail -o assets/video-sources/tours.jpg 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Courtallam%20Waterfalls.jpg'
+          curl -L --fail -o assets/video-sources/yatras.jpg 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Siruvapuri%20Sri%20Murugan%20Temple.jpg'
+          curl -L --fail -o assets/video-sources/retreats.jpg 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Jawadhu%20Hills%2C%20Tamil%20Nadu.JPG'
+          curl -L --fail -o assets/video-sources/surprises.jpg 'https://images.pexels.com/photos/18823969/pexels-photo-18823969.jpeg?auto=compress&cs=tinysrgb&w=1800'
           make_video() {
             local src="$1"
             local out="$2"
