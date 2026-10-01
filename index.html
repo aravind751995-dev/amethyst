@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Amethyst | Tours, Yatras, Retreats, Surprises & Traveller Rentals in Chennai</title>
 <meta name="description" content="Amethyst is Chennai's boutique travel and experiential management company: curated tours, spiritual yatras, nature retreats, celebration surprises and premium Traveller & Urbania rentals.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
@@ -39,8 +41,10 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rg
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) header{background:rgba(23,16,28,.94)}}
 :root[data-theme="dark"] header{background:rgba(23,16,28,.94)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
-.logo{display:flex;align-items:center;gap:10px;font-family:'Playfair Display',serif;font-weight:700;letter-spacing:.18em;font-size:19px}
-.gem{width:26px;height:26px}
+.logo{display:flex;align-items:center;gap:12px;font-family:'Playfair Display',serif;font-weight:700;letter-spacing:.18em;font-size:19px;color:var(--deep)}
+.logo img.gem{width:38px;height:auto;display:block;flex:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .logo{color:var(--ink)}}
+:root[data-theme="dark"] .logo{color:var(--ink)}
 .menu{display:flex;gap:24px;font-size:12px;font-weight:500;letter-spacing:.06em}
 .menu a:hover{color:var(--violet)}
 .burger{display:none;background:none;border:0;color:var(--ink);font-size:26px;cursor:pointer;padding:6px}
@@ -186,7 +190,7 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opac
 </defs></svg>
 
 <header><div class="wrap nav">
-<a class="logo" href="#top" aria-label="Amethyst home"><svg class="gem"><use href="#gem"/></svg>AMETHYST</a>
+<a class="logo" href="#top" aria-label="Amethyst home"><img class="gem" src="logo-gem.png" width="38" height="52" alt="">AMETHYST</a>
 <nav class="menu" id="menu" aria-label="Main">
 <a href="#experiences">Experiences</a><a href="#tours">Tours</a><a href="#yatras">Yatras</a><a href="#retreats">Retreats</a><a href="#surprises">Surprises</a><a href="#rentals">Rentals</a><a href="#about">About</a><a href="#contact">Contact</a>
 </nav>
@@ -289,7 +293,7 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opac
 
 <footer><div class="wrap">
 <div class="fgrid">
-<div><div class="logo" style="color:#fff"><svg class="gem"><use href="#gem"/></svg>AMETHYST</div><p style="margin-top:14px;font-family:'Playfair Display',serif;font-size:18px;color:var(--soft)">Experiences Beyond Ordinary.</p>
+<div><div class="logo" style="color:#fff"><img class="gem" src="logo-gem.png" width="38" height="52" alt="">AMETHYST</div><p style="margin-top:14px;font-family:'Playfair Display',serif;font-size:18px;color:var(--soft)">Experiences Beyond Ordinary.</p>
 <p style="margin-top:16px">Chennai, Tamil Nadu<br><a href="tel:+919363402164">93634 02164</a> (WhatsApp / Phone)</p>
 <div class="soc"><a href="https://instagram.com/amethysttours" target="_blank" rel="noopener">Instagram</a><a href="#" rel="noopener">Facebook</a><a href="#" rel="noopener">YouTube</a><a href="https://wa.me/919363402164" target="_blank" rel="noopener">WhatsApp</a></div></div>
 <div><h4>EXPLORE</h4><ul><li><a href="#tours">Tours</a></li><li><a href="#yatras">Yatras</a></li><li><a href="#retreats">Retreats</a></li><li><a href="#surprises">Surprises</a></li></ul></div>
