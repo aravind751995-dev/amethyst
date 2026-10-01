@@ -208,7 +208,7 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opac
 <header><div class="wrap nav">
 <a class="logo" href="#top" aria-label="Amethyst home"><img class="gem" src="logo-gem.png" width="38" height="52" alt="">AMETHYST</a>
 <nav class="menu" id="menu" aria-label="Main">
-<a href="#experiences">Experiences</a><a href="tours.html">Tours</a><a href="yatras.html">Yatras</a><a href="retreats.html">Retreats</a><a href="surprises.html">Surprises</a><a href="#rentals">Rentals</a><a href="#about">About</a><a href="#contact">Contact</a>
+<a href="#experiences">Experiences</a><a href="tours/">Tours</a><a href="yatras/">Yatras</a><a href="retreats/">Retreats</a><a href="surprises/">Surprises</a><a href="#rentals">Rentals</a><a href="#about">About</a><a href="#contact">Contact</a>
 </nav>
 <a class="btn dark" href="#contact">PLAN YOUR EXPERIENCE</a>
 <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">&#9776;</button>
@@ -312,7 +312,7 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opac
 <div><div class="logo" style="color:#fff"><img class="gem" src="logo-gem.png" width="38" height="52" alt="">AMETHYST</div><p style="margin-top:14px;font-family:'Playfair Display',serif;font-size:18px;color:var(--soft)">Experiences Beyond Ordinary.</p>
 <p style="margin-top:16px">Chennai, Tamil Nadu<br><a href="tel:+919363402164">93634 02164</a> (WhatsApp / Phone)</p>
 <div class="soc"><a href="https://www.instagram.com/amethyst_escapes/reels/" target="_blank" rel="noopener">Instagram Reels</a><a href="https://www.facebook.com/people/Amethyst-Tours/61586525126680/" target="_blank" rel="noopener">Facebook</a><a href="https://m.youtube.com/@Vlogs_by_Amethyst" target="_blank" rel="noopener">YouTube</a><a href="https://wa.me/919363402164" target="_blank" rel="noopener">WhatsApp</a></div></div>
-<div><h4>EXPLORE</h4><ul><li><a href="tours.html">Tours</a></li><li><a href="yatras.html">Yatras</a></li><li><a href="retreats.html">Retreats</a></li><li><a href="surprises.html">Surprises</a></li></ul></div>
+<div><h4>EXPLORE</h4><ul><li><a href="tours/">Tours</a></li><li><a href="yatras/">Yatras</a></li><li><a href="retreats/">Retreats</a></li><li><a href="surprises/">Surprises</a></li></ul></div>
 <div><h4>COMPANY</h4><ul><li><a href="#rentals">Traveller Rentals</a></li><li><a href="#rentals">Urbania Rentals</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></div>
 </div>
 <div class="copy">© 2026 Amethyst. All rights reserved.</div>
@@ -363,7 +363,7 @@ gallery:[
 };
 const bg=i=>i?`style="background-image:url('${i}')"`:"";
 const sil=`<svg class="sil"><use href="#mtn"/></svg>`;
-document.getElementById("verticals").innerHTML=VERTICALS.map((v,i)=>`<article class="v rv" id="${v.id}"><div class="ph ${v.cls}"><div class="scene" ${bg(MEDIA.verticals[i])}></div>${MEDIA.verticals[i]?"":sil}<span class="tag">${MEDIA.verticals[i]?"":"PHOTO"}</span></div><div class="body"><h3>${v.name}</h3><div class="tl">${v.tag}</div><p class="d">${v.d}</p><a class="link" href="${v.id}.html">${v.cta}</a></div></article>`).join("");
+document.getElementById("verticals").innerHTML=VERTICALS.map((v,i)=>`<article class="v rv" id="${v.id}"><div class="ph ${v.cls}"><div class="scene" ${bg(MEDIA.verticals[i])}></div>${MEDIA.verticals[i]?"":sil}<span class="tag">${MEDIA.verticals[i]?"":"PHOTO"}</span></div><div class="body"><h3>${v.name}</h3><div class="tl">${v.tag}</div><p class="d">${v.d}</p><a class="link" href="${v.id}/">${v.cta}</a></div></article>`).join("");
 document.getElementById("egrid").innerHTML=EXPERIENCES.map(e=>`<article class="e rv"><div class="ph ${e.cls}"><div class="scene" ${bg(e.img)}></div>${e.img?"":sil}</div><div class="body"><div class="cat">${e.cat.toUpperCase()}</div><h3>${e.name}</h3><p>${e.d}</p><div class="meta"><span>${e.dur}<br><span style="color:var(--mute);font-size:12px">from</span> <b>${e.price}</b></span><a class="link" href="${WA}${encodeURIComponent("Hi Amethyst, I'd like details on "+e.name)}" target="_blank" rel="noopener">ENQUIRE</a></div></div></article>`).join("");
 document.getElementById("ig").innerHTML=GRID.map((c,i)=>{const g=MEDIA.gallery[i];return `<div class="ph ${c}" ${g?`data-full="${g}"`:""}><div class="scene" ${bg(g)}></div></div>`}).join("");
 const T="TRAVEL  •  YATRAS  •  RETREATS  •  SURPRISES  •  ";document.getElementById("band").textContent=T.repeat(8);
