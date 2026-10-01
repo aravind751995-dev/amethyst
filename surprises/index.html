@@ -29,7 +29,62 @@ footer{background:#1b0628;color:#d8cfe0;padding:40px 0;font-size:13px}.foot{disp
 @media(max-width:850px){.links{gap:14px;flex-wrap:wrap}.settings{grid-template-columns:1fr 1fr}.secret-grid{grid-template-columns:1fr}.checklist{border-left:0;border-top:1px solid rgba(227,197,110,.45);padding:18px 0 0}.grid{grid-template-columns:1fr}}
 @media(max-width:600px){nav{height:auto;padding:12px 0;flex-wrap:wrap}.links{order:3;width:100%;padding-top:7px}.hero{min-height:560px}.hero-in{padding:100px 0 55px}.grid{margin-top:32px}.settings{grid-template-columns:1fr}.secret{padding:42px 24px}.price{align-items:flex-start;flex-direction:column}.outline{align-self:flex-start}}
 </style>
-</head>
+<style>
+/* Amethyst — refined editorial layer */
+:root{--gold-glow:rgba(201,162,74,.28)}
+body{letter-spacing:.005em}
+header{border-bottom:0;box-shadow:0 4px 24px rgba(33,26,37,.04)}
+.logo{transition:transform .35s ease,color .35s ease}.logo:hover{transform:translateY(-1px);color:var(--gold)}
+.btn,.outline{position:relative;overflow:hidden;transition:transform .35s ease,box-shadow .35s ease,background .35s ease,color .35s ease}
+.btn:before,.outline:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 20%,rgba(255,255,255,.34) 48%,transparent 70%);transform:translateX(-120%);transition:transform .7s ease}
+.btn:hover:before,.outline:hover:before{transform:translateX(120%)}
+.btn:hover,.outline:hover{transform:translateY(-2px);box-shadow:0 10px 28px var(--gold-glow)}
+.hero{min-height:610px!important;display:flex;align-items:flex-end!important;padding:0!important;background:#2a073e!important}
+.hero-media{opacity:.48!important;transform:scale(1.035)!important;transition:transform 2s ease}
+.hero:hover .hero-media{transform:scale(1.06)!important}
+.hero:after{background:linear-gradient(180deg,rgba(28,3,40,.10) 0%,rgba(38,5,54,.28) 42%,rgba(29,3,41,.86) 100%)!important}
+.hero .wrap,.hero .hero-in{padding:145px 24px 82px!important}
+.hero h1{max-width:900px!important;letter-spacing:-.025em!important;text-shadow:0 8px 35px rgba(0,0,0,.22)}
+.hero p{max-width:700px!important;font-size:18px!important;color:rgba(255,255,255,.82)!important}
+.eyebrow{color:var(--soft)!important}
+.crumb{opacity:.85;transition:opacity .3s ease}.crumb:hover{opacity:1}
+main{padding:90px 0}
+.topline h2,.intro h2,.section-head h2{letter-spacing:-.02em}
+.topline h2:after,.intro h2:after,.section-head h2:after{content:"";display:block;width:54px;height:2px;margin-top:18px;background:linear-gradient(90deg,var(--gold),var(--soft),transparent)}
+.grid{gap:34px;margin-top:52px}
+.card{border:0!important;border-radius:2px;overflow:hidden;box-shadow:0 12px 35px rgba(33,26,37,.06);transition:transform .55s cubic-bezier(.2,.7,.2,1),box-shadow .55s ease}
+.card:hover{transform:translateY(-8px)!important;box-shadow:0 24px 55px rgba(59,10,90,.13)}
+.photo{overflow:hidden}
+.card .photo{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.card:hover .photo{transform:scale(1.025)}
+.photo:after{color:rgba(255,255,255,.86)!important}
+.body{padding:29px!important}
+.cat{color:var(--gold)!important}
+.price{border-top:0!important;padding-top:18px!important;position:relative}
+.price:before{content:"";position:absolute;left:0;top:0;width:34px;height:1px;background:var(--gold)}
+.outline{border:0!important;background:rgba(201,162,74,.10);color:var(--deep)!important}
+.tags{gap:8px}.tags span{border:0!important;background:rgba(59,10,90,.045);padding:6px 10px!important}
+.cta{border:0!important;position:relative;overflow:hidden;background:linear-gradient(135deg,#24102d,#3b0a5a)!important;box-shadow:0 18px 50px rgba(59,10,90,.14)}
+.cta:before{content:"";position:absolute;width:220px;height:220px;border:1px solid rgba(227,197,110,.25);border-radius:50%;right:-70px;top:-90px}
+.cta h2{position:relative}
+footer{border-top:0}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.is-visible{opacity:1;transform:none}
+@media(max-width:760px){
+ .hero{min-height:560px!important}.hero .wrap,.hero .hero-in{padding:120px 24px 62px!important}
+ .hero h1{font-size:clamp(46px,13vw,68px)!important}
+ .grid{gap:22px}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const targets=document.querySelectorAll('main .card,main .section,main .intro,main .cta,main .topline');
+  targets.forEach((el,i)=>{el.classList.add('reveal');el.style.transitionDelay=Math.min(i*70,420)+'ms'});
+  const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target)}}),{threshold:.08});
+  targets.forEach(el=>io.observe(el));
+});
+</script></head>
 <body>
 <header><div class="wrap"><nav>
 <a class="logo" href="../"><img src="../logo-gem.png" width="36" height="50" alt="">AMETHYST</a>
@@ -39,7 +94,7 @@ footer{background:#1b0628;color:#d8cfe0;padding:40px 0;font-size:13px}.foot{disp
 
 <section class="hero">
 <div class="hero-media"><video src="../assets/videos/surprises-hero.mp4" poster="../assets/images/celebration.jpg" muted autoplay loop playsinline preload="auto" aria-hidden="true"></video></div>
-<div class="wrap hero-in"><span class="eyebrow">AMETHYST SURPRISES</span><h1>Make the moment<br>feel unforgettable.</h1><p>Not just decoration. Not just a gift. We plan the setting, details and reveal around the person you want to surprise.</p><div class="hero-note">BIRTHDAYS · ANNIVERSARIES · PROPOSALS · PRIVATE CELEBRATIONS</div></div>
+<div class="wrap hero-in"><span class="eyebrow">AMETHYST SURPRISES</span><h1>Make the moment<br>feel unforgettable.</h1><p>Because the best surprises feel like they were made just for them. We quietly take care of the setting, details and little moments that make the reveal special.</p><div class="hero-note">BIRTHDAYS · ANNIVERSARIES · PROPOSALS · PRIVATE CELEBRATIONS</div></div>
 </section>
 
 <main><div class="wrap">
@@ -65,7 +120,7 @@ footer{background:#1b0628;color:#d8cfe0;padding:40px 0;font-size:13px}.foot{disp
 
 <section class="secret"><div class="secret-grid"><div><span class="eyebrow">THE SECRET STAYS WITH US</span><h2>You plan it. They discover it.</h2><p>Amethyst Surprises is built around discreet coordination. We work with the planner first, confirm the important details, and coordinate the setup so the person being surprised doesn't need to know what is coming.</p></div><div class="checklist"><div>Private planning over WhatsApp</div><div>Location & timing coordination</div><div>Personalised decor and styling</div><div>Cake, flowers, music & photo add-ons</div><div>Custom ideas welcome</div></div></div></section>
 
-<section class="cta"><h2>Tell us the story behind the surprise.</h2><p>Share the occasion, location, preferred date, approximate budget and what you have in mind. We'll take it from there.</p><a class="btn" href="https://wa.me/919363402164?text=Hi%20Amethyst%2C%20I%27m%20planning%20a%20surprise.%20Occasion%3A%20%7C%20Date%3A%20%7C%20Location%3A%20%7C%20Budget%3A%20%7C%20Idea%3A" target="_blank">START THE CONVERSATION</a></section>
+<section class="cta"><h2>Tell us what you're imagining.</h2><p>A few details are enough — the occasion, date, place and your idea. We'll take care of the rest, discreetly.</p><a class="btn" href="https://wa.me/919363402164?text=Hi%20Amethyst%2C%20I%27m%20planning%20a%20surprise.%20Occasion%3A%20%7C%20Date%3A%20%7C%20Location%3A%20%7C%20Budget%3A%20%7C%20Idea%3A" target="_blank">START THE CONVERSATION</a></section>
 </div></main>
 
 <footer><div class="wrap foot"><div>© 2026 Amethyst · Experiences Beyond Ordinary.</div><div><a href="https://www.instagram.com/amethyst_escapes/reels/" target="_blank">Instagram</a> · <a href="https://share.google/rzrZV1XfzGLne0m9T" target="_blank">Google Reviews</a> · <a href="https://wa.me/919363402164" target="_blank">WhatsApp 93634 02164</a></div><p class="media-credit">Surprise concept imagery: Pexels free media. Images are illustrative and do not represent Amethyst-owned event setups.</p></div></footer>
