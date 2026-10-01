@@ -30,12 +30,29 @@ jobs:
           curl -L --fail -o assets/videos/retreats-hero.mp4 'https://cdn.pixabay.com/video/2025/07/31/294617_large.mp4'
           curl -L --fail -o assets/videos/surprises-hero.mp4 'https://cdn.pixabay.com/video/2024/12/25/248655_large.mp4'
 
-          # Local stock image pack for hero fallbacks and experience sections.
-          curl -L --fail --retry 6 --retry-delay 5 --retry-all-errors -A 'Mozilla/5.0 AmethystMediaBot/1.0' -o assets/images/chennai.jpg 'https://images.pexels.com/photos/34079316/pexels-photo-34079316.jpeg?auto=compress&cs=tinysrgb&w=1800'
-          curl -L --fail --retry 6 --retry-delay 5 --retry-all-errors -A 'Mozilla/5.0 AmethystMediaBot/1.0' -o assets/images/nature.jpg 'https://images.pexels.com/photos/1337715/pexels-photo-1337715.jpeg?auto=compress&cs=tinysrgb&w=1800'
-          curl -L --fail --retry 6 --retry-delay 5 --retry-all-errors -A 'Mozilla/5.0 AmethystMediaBot/1.0' -o assets/images/travel.jpg 'https://images.pexels.com/photos/5076317/pexels-photo-5076317.jpeg?auto=compress&cs=tinysrgb&w=1800'
-          curl -L --fail --retry 6 --retry-delay 5 --retry-all-errors -A 'Mozilla/5.0 AmethystMediaBot/1.0' -o assets/images/celebration.jpg 'https://images.pexels.com/photos/18823969/pexels-photo-18823969.jpeg?auto=compress&cs=tinysrgb&w=1800'
-          curl -L --fail --retry 6 --retry-delay 5 --retry-all-errors -A 'Mozilla/5.0 AmethystMediaBot/1.0' -o assets/images/retreat.jpg 'https://images.pexels.com/photos/17788657/pexels-photo-17788657.jpeg?auto=compress&cs=tinysrgb&w=1800'
+          # Local copies of all destination, rental and experience images used by the site.
+          download() { curl -L --fail --retry 6 --retry-delay 5 --retry-all-errors -A 'Mozilla/5.0 AmethystMediaBot/1.0' -o "$2" "$1"; }
+          download 'https://images.pexels.com/photos/34079316/pexels-photo-34079316.jpeg?auto=compress&cs=tinysrgb&w=1800' assets/images/chennai.jpg
+          download 'https://images.pexels.com/photos/1337715/pexels-photo-1337715.jpeg?auto=compress&cs=tinysrgb&w=1800' assets/images/nature.jpg
+          download 'https://images.pexels.com/photos/5076317/pexels-photo-5076317.jpeg?auto=compress&cs=tinysrgb&w=1800' assets/images/travel.jpg
+          download 'https://images.pexels.com/photos/18823969/pexels-photo-18823969.jpeg?auto=compress&cs=tinysrgb&w=1800' assets/images/celebration.jpg
+          download 'https://images.pexels.com/photos/17788657/pexels-photo-17788657.jpeg?auto=compress&cs=tinysrgb&w=1800' assets/images/retreat.jpg
+          download 'https://images.pexels.com/photos/21005752/pexels-photo-21005752.jpeg?auto=compress&cs=tinysrgb&w=2200' assets/images/hero-travel.jpg
+          download 'https://images.pexels.com/photos/36114768/pexels-photo-36114768.jpeg?auto=compress&cs=tinysrgb&w=1600' assets/images/experience.jpg
+          download 'https://images.pexels.com/photos/37572680/pexels-photo-37572680.jpeg?auto=compress&cs=tinysrgb&w=1800' assets/images/surprise-1.jpg
+          download 'https://images.pexels.com/photos/17746293/pexels-photo-17746293.jpeg?auto=compress&cs=tinysrgb&w=1800' assets/images/surprise-2.jpg
+          download 'https://images.pexels.com/photos/6315289/pexels-photo-6315289.jpeg?auto=compress&cs=tinysrgb&w=1800' assets/images/surprise-3.jpg
+          download 'https://www.forcemotors.com/wp-content/uploads/2025/02/Traveller-Wider-Body-SWB-12D13D-Banner_1.webp' assets/images/force-traveller.webp
+          download 'https://www.forcemotors.com/wp-content/uploads/2026/07/urbania-menu.png.webp' assets/images/force-urbania.webp
+          download 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Courtallam%20Waterfalls.jpg' assets/images/courtallam.jpg
+          download 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Thiruvannamalai%20temple%20Tamilnadu.jpg' assets/images/thiruvannamalai.jpg
+          download 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Siruvapuri%20Sri%20Murugan%20Temple.jpg' assets/images/siruvapuri.jpg
+          download 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Jawadhu%20Hills%2C%20Tamil%20Nadu.JPG' assets/images/jawadhu.jpg
+          download 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Ekambareswarar%20temple%20kanchipuram.jpg' assets/images/kanchipuram.jpg
+          download 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Thiruthani%20Murugan%20Temple.jpg' assets/images/thiruthani.jpg
+          download 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Palani%20Murugan%20Hill%20Temple.jpg' assets/images/palani.jpg
+          download 'https://i.ytimg.com/vi/vtWHTWD5U0w/maxresdefault.jpg' assets/images/aare.jpg
+          download 'https://i.ytimg.com/vi/QCfAdUp0h1U/maxresdefault.jpg' assets/images/moola-kona.jpg
 
           # Normalize the hero videos for browser playback and a consistent 16:9 presentation.
           normalize() {
