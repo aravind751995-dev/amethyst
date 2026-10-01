@@ -30,16 +30,12 @@ jobs:
           curl -L --fail -o assets/videos/retreats-hero.mp4 'https://cdn.pixabay.com/video/2025/07/31/294617_large.mp4'
           curl -L --fail -o assets/videos/surprises-hero.mp4 'https://cdn.pixabay.com/video/2024/12/25/248655_large.mp4'
 
-          # Local destination images for cards/gallery/fallbacks.
-          curl -L --fail -o assets/images/courtallam.jpg 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Courtallam%20Waterfalls.jpg'
-          curl -L --fail -o assets/images/thiruvannamalai.jpg 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Thiruvannamalai%20temple%20Tamilnadu.jpg'
-          curl -L --fail -o assets/images/siruvapuri.jpg 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Siruvapuri%20Sri%20Murugan%20Temple.jpg'
-          curl -L --fail -o assets/images/thiruthani.jpg 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Thiruthani%20Murugan%20Temple.jpg'
-          curl -L --fail -o assets/images/jawadhu.jpg 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Jawadhu%20Hills%2C%20Tamil%20Nadu.JPG'
-          curl -L --fail -o assets/images/kanchipuram.jpg 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Ekambareswarar%20temple%20kanchipuram.jpg'
-          curl -L --fail -o assets/images/palani.jpg 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Palani%20Murugan%20Hill%20Temple.jpg'
-          curl -L --fail -o assets/images/chennai.jpg 'https://images.pexels.com/photos/34079316/pexels-photo-34079316.jpeg?auto=compress&cs=tinysrgb&w=1800'
-          curl -L --fail -o assets/images/surprise.jpg 'https://images.pexels.com/photos/18823969/pexels-photo-18823969.jpeg?auto=compress&cs=tinysrgb&w=1800'
+          # Local stock image pack for hero fallbacks and experience sections.
+          curl -L --fail --retry 6 --retry-delay 5 --retry-all-errors -A 'Mozilla/5.0 AmethystMediaBot/1.0' -o assets/images/chennai.jpg 'https://images.pexels.com/photos/34079316/pexels-photo-34079316.jpeg?auto=compress&cs=tinysrgb&w=1800'
+          curl -L --fail --retry 6 --retry-delay 5 --retry-all-errors -A 'Mozilla/5.0 AmethystMediaBot/1.0' -o assets/images/nature.jpg 'https://images.pexels.com/photos/1337715/pexels-photo-1337715.jpeg?auto=compress&cs=tinysrgb&w=1800'
+          curl -L --fail --retry 6 --retry-delay 5 --retry-all-errors -A 'Mozilla/5.0 AmethystMediaBot/1.0' -o assets/images/travel.jpg 'https://images.pexels.com/photos/5076317/pexels-photo-5076317.jpeg?auto=compress&cs=tinysrgb&w=1800'
+          curl -L --fail --retry 6 --retry-delay 5 --retry-all-errors -A 'Mozilla/5.0 AmethystMediaBot/1.0' -o assets/images/celebration.jpg 'https://images.pexels.com/photos/18823969/pexels-photo-18823969.jpeg?auto=compress&cs=tinysrgb&w=1800'
+          curl -L --fail --retry 6 --retry-delay 5 --retry-all-errors -A 'Mozilla/5.0 AmethystMediaBot/1.0' -o assets/images/retreat.jpg 'https://images.pexels.com/photos/17788657/pexels-photo-17788657.jpeg?auto=compress&cs=tinysrgb&w=1800'
 
           # Normalize the hero videos for browser playback and a consistent 16:9 presentation.
           normalize() {
