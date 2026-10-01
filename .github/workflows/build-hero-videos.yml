@@ -1,10 +1,10 @@
-name: Build local hero videos
+name: Build local stock media
 
 on:
   push:
     paths:
       - '.github/workflows/build-hero-videos.yml'
-      - 'assets/video-sources/**'
+      - 'assets/media-sources/**'
   workflow_dispatch:
 
 permissions:
@@ -17,32 +17,66 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install ffmpeg
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
-      - name: Build cinematic hero loops
+      - name: Download stock videos and images
         shell: bash
         run: |
           set -e
-          mkdir -p assets/videos assets/video-sources
-          curl -L --fail -o assets/video-sources/home.jpg 'https://images.pexels.com/photos/34079316/pexels-photo-34079316.jpeg?auto=compress&cs=tinysrgb&w=1800'
-          curl -L --fail -o assets/video-sources/tours.jpg 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Courtallam%20Waterfalls.jpg'
-          curl -L --fail -o assets/video-sources/yatras.jpg 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Siruvapuri%20Sri%20Murugan%20Temple.jpg'
-          curl -L --fail -o assets/video-sources/retreats.jpg 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Jawadhu%20Hills%2C%20Tamil%20Nadu.JPG'
-          curl -L --fail -o assets/video-sources/surprises.jpg 'https://images.pexels.com/photos/18823969/pexels-photo-18823969.jpeg?auto=compress&cs=tinysrgb&w=1800'
-          make_video() {
+          mkdir -p assets/videos assets/images assets/media-sources
+
+          # Stock video sources — Pixabay/Pexels free-use media.
+          curl -L --fail -o assets/videos/home-hero.mp4 'https://videos.pexels.com/video-files/35503528/15040489_1920_1080_30fps.mp4'
+          curl -L --fail -o assets/videos/tours-hero.mp4 'https://cdn.pixabay.com/video/2026/04/15/346494_large.mp4'
+          curl -L --fail -o assets/videos/yatras-hero.mp4 'https://cdn.pixabay.com/video/2015/08/13/442-136215984_large.mp4'
+          curl -L --fail -o assets/videos/retreats-hero.mp4 'https://cdn.pixabay.com/video/2025/07/31/294617_large.mp4'
+          curl -L --fail -o assets/videos/surprises-hero.mp4 'https://cdn.pixabay.com/video/2024/12/25/248655_large.mp4'
+
+          # Local destination images for cards/gallery/fallbacks.
+          curl -L --fail -o assets/images/courtallam.jpg 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Courtallam%20Waterfalls.jpg'
+          curl -L --fail -o assets/images/thiruvannamalai.jpg 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Thiruvannamalai%20temple%20Tamilnadu.jpg'
+          curl -L --fail -o assets/images/siruvapuri.jpg 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Siruvapuri%20Sri%20Murugan%20Temple.jpg'
+          curl -L --fail -o assets/images/thiruthani.jpg 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Thiruthani%20Murugan%20Temple.jpg'
+          curl -L --fail -o assets/images/jawadhu.jpg 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Jawadhu%20Hills%2C%20Tamil%20Nadu.JPG'
+          curl -L --fail -o assets/images/kanchipuram.jpg 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Ekambareswarar%20temple%20kanchipuram.jpg'
+          curl -L --fail -o assets/images/palani.jpg 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Palani%20Murugan%20Hill%20Temple.jpg'
+          curl -L --fail -o assets/images/chennai.jpg 'https://images.pexels.com/photos/34079316/pexels-photo-34079316.jpeg?auto=compress&cs=tinysrgb&w=1800'
+          curl -L --fail -o assets/images/surprise.jpg 'https://images.pexels.com/photos/18823969/pexels-photo-18823969.jpeg?auto=compress&cs=tinysrgb&w=1800'
+
+          # Normalize the hero videos for browser playback and a consistent 16:9 presentation.
+          normalize() {
             local src="$1"
-            local out="$2"
-            local zoom="$3"
-            ffmpeg -y -loop 1 -i "$src" -t 10 -vf "scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,zoompan=z='min($zoom,zoom+0.0005)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=1:s=1920x1080:fps=30,format=yuv420p" -an -movflags +faststart "$out"
+            local tmp="$2"
+            ffmpeg -y -i "$src" -vf "scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080" -an -c:v libx264 -crf 24 -preset medium -movflags +faststart "$tmp"
+            mv "$tmp" "$src"
           }
-          make_video assets/video-sources/home.jpg assets/videos/home-hero.mp4 1.10
-          make_video assets/video-sources/tours.jpg assets/videos/tours-hero.mp4 1.12
-          make_video assets/video-sources/yatras.jpg assets/videos/yatras-hero.mp4 1.08
-          make_video assets/video-sources/retreats.jpg assets/videos/retreats-hero.mp4 1.12
-          make_video assets/video-sources/surprises.jpg assets/videos/surprises-hero.mp4 1.10
-      - name: Commit generated videos
+          normalize assets/videos/tours-hero.mp4 assets/videos/tours-normalized.mp4
+          normalize assets/videos/yatras-hero.mp4 assets/videos/yatras-normalized.mp4
+          normalize assets/videos/retreats-hero.mp4 assets/videos/retreats-normalized.mp4
+          normalize assets/videos/surprises-hero.mp4 assets/videos/surprises-normalized.mp4
+      - name: Save media manifest
+        run: |
+          cat > assets/media-sources/README.md <<'EOF'
+          # Amethyst local media
+
+          Hero videos and destination images are downloaded into this directory by GitHub Actions from free-stock sources.
+
+          Videos:
+          - Home: Pexels Chennai aerial footage
+          - Tours: Pixabay AI-generated waterfall footage
+          - Yatras: Pixabay India temple journey footage
+          - Retreats: Pixabay Sikkim monsoon road-trip footage
+          - Surprises: Pixabay AI-generated birthday/celebration footage
+
+          Images:
+          - Destination-specific Wikimedia Commons files
+          - Chennai and celebration imagery from Pexels
+
+          The site serves the resulting files from the repository itself, so visitors do not load YouTube embeds or third-party video players.
+          EOF
+      - name: Commit local media
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/videos
+          git add assets/videos assets/images assets/media-sources/README.md
           git diff --cached --quiet && exit 0
-          git commit -m "Build self-hosted cinematic hero videos [skip ci]"
+          git commit -m "Add self-hosted stock hero videos and destination images [skip ci]"
           git push
