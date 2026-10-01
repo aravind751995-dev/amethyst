@@ -427,8 +427,9 @@ const T="TRAVEL  •  YATRAS  •  RETREATS  •  SURPRISES  •  ";document.get
 document.getElementById("heroVid").hidden=false;document.querySelector(".hero").classList.add("hasmedia");
 MEDIA.rentals.forEach((u,i)=>{const e=document.querySelectorAll(".r .scene")[i];if(e&&u){e.style.backgroundImage=`url('${u}')`;e.style.filter="none"}});
 if(MEDIA.filmPoster)document.querySelector("#filmPh .scene").style.background=`linear-gradient(rgba(33,6,50,.3),rgba(33,6,50,.5)),url('${MEDIA.filmPoster}') center/cover`;
-document.getElementById("play").onclick=function(){if(!MEDIA.film){this.insertAdjacentHTML("afterend",'<p style="position:absolute;bottom:18px;left:0;right:0;text-align:center;font-size:13px;color:#e3c56e">Add your film in MEDIA.film</p>');this.remove();return}
-const f=document.getElementById("film");f.innerHTML=`<video src="${MEDIA.film}" controls autoplay playsinline style="width:100%;height:100%;object-fit:cover"></video>`};
+const play=document.getElementById("play");
+if(play){play.onclick=function(){if(!MEDIA.film){this.insertAdjacentHTML("afterend",'<p style="position:absolute;bottom:18px;left:0;right:0;text-align:center;font-size:13px;color:#e3c56e">Add your film in MEDIA.film</p>');this.remove();return}
+const f=document.getElementById("film");if(f)f.innerHTML=`<video src="${MEDIA.film}" controls autoplay playsinline style="width:100%;height:100%;object-fit:cover"></video>`};}
 document.getElementById("ig").onclick=e=>{const t=e.target.closest("[data-full]");if(!t)return;const d=document.createElement("div");d.className="lb";d.innerHTML=`<img alt="" src="${t.dataset.full}">`;d.onclick=()=>d.remove();document.body.append(d)};
 const b=document.getElementById("burger"),m=document.getElementById("menu");
 b.onclick=()=>{const o=m.classList.toggle("open");b.setAttribute("aria-expanded",o)};
