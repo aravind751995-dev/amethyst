@@ -197,7 +197,7 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opac
 .rv{opacity:0;transform:translateY(16px);transition:opacity .8s,transform .8s}
 .rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
-.media-credit{max-width:1180px;margin:28px auto 0;padding:18px 24px 0;border-top:1px solid rgba(255,255,255,.1);font-size:11px;line-height:1.7;color:#9a8fa5}</style>
+.media-credit{max-width:1180px;margin:28px auto 0;padding:18px 24px 0;border-top:1px solid rgba(255,255,255,.1);font-size:11px;line-height:1.7;color:#9a8fa5}.media-frame,.photo,.frame .ph{overflow:hidden}.photo{height:auto;aspect-ratio:16/10;background-size:cover;background-position:center}.ph .scene{background-size:cover;background-position:center}.hero .ph{height:100%;aspect-ratio:auto}.frame{aspect-ratio:16/9}.ig .ph{aspect-ratio:1/1;min-height:0}.r .ph{aspect-ratio:16/10;height:auto}</style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute"><defs>
@@ -338,7 +338,7 @@ const GRID=["s-yatra","s-tour","s-retreat","s-tour","s-surprise","s-retreat","s-
 /* ===== MEDIA: paste photo/video paths (self-hosted: "images/hero.jpg", "videos/hero.mp4") or data: URIs ===== */
 const MEDIA={
 heroVideo:"https://videos.pexels.com/video-files/35503528/15040489_1920_1080_30fps.mp4",
-heroPoster:"https://images.unsplash.com/photo-1774015671050-2a90b0290861?auto=format&fit=crop&fm=jpg&q=85&w=2200",
+heroPoster:"https://images.pexels.com/photos/21005752/pexels-photo-21005752.jpeg?auto=compress&cs=tinysrgb&w=2200",
 film:"https://videos.pexels.com/video-files/3254197/3254197-hd_1920_1080_25fps.mp4",
 filmPoster:"https://images.unsplash.com/photo-1578326013806-51ad7f2e3458?auto=format&fit=crop&w=1400&q=85",
 verticals:[
@@ -348,16 +348,7 @@ verticals:[
 "https://images.unsplash.com/photo-1644487939373-5fc424746118?auto=format&fit=crop&w=1400&q=85"
 ],
 rentals:[],
-gallery:[
-"https://images.unsplash.com/photo-1578326013806-51ad7f2e3458?auto=format&fit=crop&fm=jpg&q=82&w=1200",
-"https://images.unsplash.com/photo-1774015671050-2a90b0290861?auto=format&fit=crop&fm=jpg&q=82&w=1200",
-"https://images.unsplash.com/photo-1644487939373-5fc424746118?auto=format&fit=crop&fm=jpg&q=82&w=1200",
-"https://images.unsplash.com/photo-1781184307914-00ea8c9b3f6f?auto=format&fit=crop&fm=jpg&q=82&w=1200",
-"https://images.unsplash.com/photo-1774015671050-2a90b0290861?auto=format&fit=crop&fm=jpg&q=82&w=1200",
-"https://images.unsplash.com/photo-1578326013806-51ad7f2e3458?auto=format&fit=crop&fm=jpg&q=82&w=1200",
-"https://images.unsplash.com/photo-1644487939373-5fc424746118?auto=format&fit=crop&fm=jpg&q=82&w=1200",
-"https://images.unsplash.com/photo-1781184307914-00ea8c9b3f6f?auto=format&fit=crop&fm=jpg&q=82&w=1200"
-]
+gallery:["https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1400&q=85","https://images.unsplash.com/photo-1532664189809-02133fee698d?auto=format&fit=crop&w=1400&q=85","https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1400&q=85","https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1400&q=85","https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=85","https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1400&q=85","https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1400&q=85","https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1400&q=85"]
 };
 const bg=i=>i?`style="background-image:url('${i}')"`:"";
 const sil=`<svg class="sil"><use href="#mtn"/></svg>`;
