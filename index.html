@@ -223,7 +223,7 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opac
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
 .media-credit{max-width:1180px;margin:28px auto 0;padding:18px 24px 0;border-top:1px solid rgba(255,255,255,.1);font-size:11px;line-height:1.7;color:#9a8fa5}.media-frame,.photo,.frame .ph{overflow:hidden}.photo{height:auto;aspect-ratio:16/10;background-size:cover;background-position:center}.ph .scene{background-size:cover;background-position:center}.frame{aspect-ratio:16/9}.ig .ph{aspect-ratio:1/1;min-height:0}.r .ph{aspect-ratio:16/9;height:auto}</style>
 <style id="amethyst-luxury-motion">
-/* AMETHYST LUXURY MOTION  refined, cinematic, restrained */
+/* AMETHYST LUXURY MOTION refined, cinematic, restrained */
 html{scroll-behavior:smooth}
 body{overflow-x:hidden}
 body:before{content:"";position:fixed;top:0;left:0;width:100%;height:2px;transform:scaleX(var(--scroll,0));transform-origin:left;background:linear-gradient(90deg,var(--gold),var(--soft),var(--violet));z-index:9999;pointer-events:none}
@@ -243,7 +243,7 @@ header.scrolled{box-shadow:0 10px 35px rgba(33,26,37,.10)!important;background:r
 @keyframes luxuryTitle{from{opacity:0;transform:translateY(26px);letter-spacing:.015em}to{opacity:1;transform:none;letter-spacing:inherit}}
 .eyebrow{position:relative}
 
-.topline h2:after,.intro h2:after,.section-head h2:after{width:72px!important;height:1px!important;box-shadow:0 0 10px rgba(201,162,74,.28)}
+
 .card,.v,.e,.r,.t,.setting{position:relative;overflow:hidden}
 .card:before,.v:before,.e:before,.r:before,.t:before,.setting:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;background:linear-gradient(115deg,transparent 28%,rgba(255,255,255,.55) 48%,transparent 68%);transform:translateX(-120%);z-index:5}
 .card:hover:before,.v:hover:before,.e:hover:before,.r:hover:before,.t:hover:before,.setting:hover:before{opacity:1;animation:cardShine .9s ease}
@@ -282,7 +282,12 @@ const style=document.createElement('style');style.textContent='.lux-reveal{opaci
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('lux-visible');io.unobserve(e.target)}}),{threshold:.08});
 els.forEach(e=>io.observe(e));
 })();
-</script></head>
+</script>
+<style id="amethyst-type-alignment-final">
+/* Final typography and alignment pass */
+html{font-size:16px}body{font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}h1,h2,h3{letter-spacing:-.018em}p{max-width:68ch}.wrap{width:100%}.eyebrow{font-size:11px;line-height:1.4;letter-spacing:.18em}.btn,.link,.outline{font-size:11px;line-height:1.2}.btn{padding:14px 22px}.link{display:inline-block}.hero h1{line-height:1.04}.hero p,.hero p.sub{line-height:1.75}.head,.topline{align-items:flex-end}.topline h2,.section-head h2,.intro h2{margin-bottom:0}.topline h2:after,.intro h2:after,.section-head h2:after{display:none!important}.card h3,.v h3,.e h3,.r h3,.setting h3{line-height:1.18}.desc,.card .desc{line-height:1.7}.cat{line-height:1.4}.tags span,.uses span{line-height:1.4}.cta p,.final p{line-height:1.75}.fgrid{align-items:start}@media(max-width:760px){body{font-size:14px;line-height:1.7}.wrap{padding-left:20px;padding-right:20px}section,main{padding-top:72px;padding-bottom:72px}.hero{min-height:560px!important}.hero h1{font-size:clamp(42px,12vw,64px)!important;line-height:1.04}.hero p,.hero p.sub{font-size:15px!important;line-height:1.7}.hero .wrap,.hero .in,.hero .hero-in{padding-left:20px!important;padding-right:20px!important}.head,.topline{align-items:flex-start}.v .body,.e .body,.r .body,.card .body{padding:22px!important}.v h3,.e h3,.r h3,.card h3{font-size:22px}.final h2,.cta h2{line-height:1.1}.menu{font-size:12px}.logo{font-size:18px}}
+@media(min-width:761px){.hero .wrap,.hero .in,.hero .hero-in{max-width:1180px;margin-left:auto;margin-right:auto}.hero h1{max-width:900px}.hero p{max-width:680px}}
+</style></head>
 <body>
 <svg width="0" height="0" style="position:absolute"><defs>
 <symbol id="gem" viewBox="0 0 32 32"><path d="M16 2l11 8-3 18H8L5 10z" fill="#7B2CBF"/><path d="M16 2l11 8H5z" fill="#C9A24A"/><path d="M16 2l-4 8 4 18 4-18z" fill="#5B1685"/></symbol>
@@ -304,7 +309,7 @@ els.forEach(e=>io.observe(e));
 <div class="in">
 <div class="fade" style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(34px,6vw,72px);line-height:1.05;color:var(--soft);font-weight:600;margin-bottom:12px">VANAKKAM CHENNAI</div><span class="eyebrow fade" style="margin-top:8px">TRAVEL • YATRAS • RETREATS • SURPRISES</span>
 <h1 class="fade" style="animation-delay:.15s">Make Every Journey Extraordinary.</h1>
-<p class="sub fade" style="animation-delay:.3s">From Chennai to places worth discovering  curated journeys, spiritual escapes, rejuvenating retreats and unforgettable moments, thoughtfully planned by Amethyst.</p>
+<p class="sub fade" style="animation-delay:.3s">From Chennai to places worth discovering curated journeys, spiritual escapes, rejuvenating retreats and unforgettable moments, thoughtfully planned by Amethyst.</p>
 <div class="cta fade" style="animation-delay:.45s"><a class="btn" href="#custom-plan">EXPLORE EXPERIENCES</a><a class="btn ghost" href="#custom-plan">PLAN WITH AMETHYST</a></div>
 </div>
 </section>
@@ -312,37 +317,37 @@ els.forEach(e=>io.observe(e));
 
 <section class="about-section" id="about">
 <div class="wrap">
-  <div class="about-intro">
-    <div class="about-copy rv">
-      <span class="eyebrow">ABOUT AMETHYST</span>
-      <h2>Experiences<br>Beyond Ordinary.</h2>
-      <p>Amethyst creates thoughtfully curated journeys, retreats, yatras and celebrations designed around the people and moments that matter.</p>
-      <p>From the first idea to the final detail, we take care of the planning so you can simply enjoy the experience.</p>
-    </div>
-    <div class="about-image rv">
-      <div class="about-image-inner"></div>
-    </div>
+ <div class="about-intro">
+  <div class="about-copy rv">
+   <span class="eyebrow">ABOUT AMETHYST</span>
+   <h2>Experiences<br>Beyond Ordinary.</h2>
+   <p>Amethyst creates thoughtfully curated journeys, retreats, yatras and celebrations designed around the people and moments that matter.</p>
+   <p>From the first idea to the final detail, we take care of the planning so you can simply enjoy the experience.</p>
   </div>
+  <div class="about-image rv">
+   <div class="about-image-inner"></div>
+  </div>
+ </div>
 
-  <div class="why about-values">
-    <div><svg viewBox="0 0 44 44"><path d="M22 4l14 10-4 24H12L8 14z"/><path class="g" d="M8 14h28"/></svg><h3>CURATED</h3><p>Thoughtfully planned experiences.</p></div>
-    <div><svg viewBox="0 0 44 44"><circle cx="16" cy="16" r="6"/><circle cx="30" cy="18" r="5"/><path class="g" d="M6 38c0-8 20-8 20 0M24 38c0-6 14-6 14 0"/></svg><h3>PERSONAL</h3><p>Designed around you.</p></div>
-    <div><svg viewBox="0 0 44 44"><path d="M6 30c8-14 16 6 32-10"/><path class="g" d="M6 38h32"/><circle cx="38" cy="20" r="2"/></svg><h3>SEAMLESS</h3><p>Every detail taken care of.</p></div>
-    <div><svg viewBox="0 0 44 44"><path d="M22 38C8 28 6 18 14 13c4-2 7 0 8 3 1-3 4-5 8-3 8 5 6 15-8 25z"/><path class="g" d="M22 16v10"/></svg><h3>MEMORABLE</h3><p>Moments worth remembering.</p></div>
-  </div>
+ <div class="why about-values">
+  <div><svg viewBox="0 0 44 44"><path d="M22 4l14 10-4 24H12L8 14z"/><path class="g" d="M8 14h28"/></svg><h3>CURATED</h3><p>Thoughtfully planned experiences.</p></div>
+  <div><svg viewBox="0 0 44 44"><circle cx="16" cy="16" r="6"/><circle cx="30" cy="18" r="5"/><path class="g" d="M6 38c0-8 20-8 20 0M24 38c0-6 14-6 14 0"/></svg><h3>PERSONAL</h3><p>Designed around you.</p></div>
+  <div><svg viewBox="0 0 44 44"><path d="M6 30c8-14 16 6 32-10"/><path class="g" d="M6 38h32"/><circle cx="38" cy="20" r="2"/></svg><h3>SEAMLESS</h3><p>Every detail taken care of.</p></div>
+  <div><svg viewBox="0 0 44 44"><path d="M22 38C8 28 6 18 14 13c4-2 7 0 8 3 1-3 4-5 8-3 8 5 6 15-8 25z"/><path class="g" d="M22 16v10"/></svg><h3>MEMORABLE</h3><p>Moments worth remembering.</p></div>
+ </div>
 
-  <div class="about-process">
-    <div class="rv">
-      <span class="eyebrow">HOW IT WORKS</span>
-      <h2>From Idea To Memories</h2>
-    </div>
-    <div class="steps rv">
-      <div class="step"><b>01</b><p>Tell Us Your Idea</p></div>
-      <div class="step"><b>02</b><p>We Curate The Experience</p></div>
-      <div class="step"><b>03</b><p>We Handle The Planning</p></div>
-      <div class="step"><b>04</b><p>You Make The Memories</p></div>
-    </div>
+ <div class="about-process">
+  <div class="rv">
+   <span class="eyebrow">HOW IT WORKS</span>
+   <h2>From Idea To Memories</h2>
   </div>
+  <div class="steps rv">
+   <div class="step"><b>01</b><p>Tell Us Your Idea</p></div>
+   <div class="step"><b>02</b><p>We Curate The Experience</p></div>
+   <div class="step"><b>03</b><p>We Handle The Planning</p></div>
+   <div class="step"><b>04</b><p>You Make The Memories</p></div>
+  </div>
+ </div>
 </div>
 </section>
 
@@ -365,8 +370,8 @@ els.forEach(e=>io.observe(e));
 <div class="uses"><span>Family trips</span><span>Corporate travel</span><span>Temple journeys</span><span>Outstation</span><span>Weddings</span><span>Airport transfers</span><span>Group tours</span><span>Private holidays</span></div>
 </div>
 <div class="rgrid">
-<article class="r rv"><div class="ph s-van"><div class="scene" style="background-image:url('assets/images/force-traveller.webp');background-color:#fff"></div></div><div class="body"><h3>FORCE TRAVELLER</h3><p class="sm">AC Force Traveller rentals in Chennai using the Traveller N platform shown here, suitable for family trips, temple groups, corporate travel and outstation journeys.</p><ul><li>12/13/14+D configurations</li><li>AC available</li><li>High-back seating</li><li>Experienced driver</li><li>Chennai local &amp; outstation</li><li>Private group travel</li></ul><a class="link" href="#rentals">ENQUIRE FOR TRAVELLER →</a></div></article>
-<article class="r rv"><div class="ph s-van"><div class="scene" style="background-image:url('assets/images/force-urbania.webp');background-color:#fff"></div></div><div class="body"><h3>FORCE URBANIA</h3><p class="sm">Premium Force Urbania rentals in Chennai for corporate travel, family holidays, airport transfers, weddings and long-distance journeys.</p><ul><li>Premium AC shared mobility</li><li>Reclining seating options</li><li>Individual AC vents</li><li>Spacious cabin</li><li>Professional driver</li><li>Chennai local &amp; outstation</li></ul><a class="link" href="#rentals">ENQUIRE FOR URBANIA →</a></div></article>
+<article class="r rv"><div class="ph s-van"><div class="scene" style="background-image:url('assets/images/force-traveller.webp');background-color:#fff"></div></div><div class="body"><h3>FORCE TRAVELLER</h3><p class="sm">AC Force Traveller rentals in Chennai using the Traveller N platform shown here, suitable for family trips, temple groups, corporate travel and outstation journeys.</p><ul><li>12/13/14+D configurations</li><li>AC available</li><li>High-back seating</li><li>Experienced driver</li><li>Chennai local &amp; outstation</li><li>Private group travel</li></ul><a class="link" href="#rentals">ENQUIRE FOR TRAVELLER</a></div></article>
+<article class="r rv"><div class="ph s-van"><div class="scene" style="background-image:url('assets/images/force-urbania.webp');background-color:#fff"></div></div><div class="body"><h3>FORCE URBANIA</h3><p class="sm">Premium Force Urbania rentals in Chennai for corporate travel, family holidays, airport transfers, weddings and long-distance journeys.</p><ul><li>Premium AC shared mobility</li><li>Reclining seating options</li><li>Individual AC vents</li><li>Spacious cabin</li><li>Professional driver</li><li>Chennai local &amp; outstation</li></ul><a class="link" href="#rentals">ENQUIRE FOR URBANIA</a></div></article>
 </div>
 <div class="rfoot rv"><a class="btn dark" href="https://wa.me/919363402164?text=Hi%20Amethyst%2C%20I%27d%20like%20a%20rental%20quote" target="_blank" rel="noopener">GET RENTAL QUOTE</a><span style="color:var(--mute);font-size:14px">Available for Chennai local and outstation travel.</span></div>
 </div></section>
@@ -418,10 +423,10 @@ els.forEach(e=>io.observe(e));
 /* ===== EASY UPDATES: edit these lists. Set img to a data: URI or leave "" for the placeholder scene. ===== */
 const WA="https://wa.me/919363402164?text=";
 const VERTICALS=[
-{id:"tours",cls:"s-tour",name:"AMETHYST TOURS",tag:"Adventure starts here.",d:"Thrilling getaways, weekend escapes and seamless group expeditions designed to make every journey memorable.",cta:"EXPLORE TOURS →"},
-{id:"yatras",cls:"s-yatra",name:"AMETHYST YATRAS",tag:"Travel with purpose.",d:"Enriching cultural and spiritual journeys with carefully planned temple visits, darshan experiences and pilgrimage routes.",cta:"EXPLORE YATRAS →"},
-{id:"retreats",cls:"s-retreat",name:"AMETHYST RETREATS",tag:"Disconnect. Recharge. Return refreshed.",d:"Handpicked nature escapes, peaceful stays and rejuvenating experiences designed to help you slow down and reconnect.",cta:"EXPLORE RETREATS →"},
-{id:"surprises",cls:"s-surprise",name:"AMETHYST SURPRISES",tag:"Make their moment unforgettable.",d:"Custom-tailored surprises and celebrations, from terrace decor and romantic experiences to birthdays, anniversaries and milestone celebrations.",cta:"CREATE A SURPRISE →"}];
+{id:"tours",cls:"s-tour",name:"AMETHYST TOURS",tag:"Adventure starts here.",d:"Thrilling getaways, weekend escapes and seamless group expeditions designed to make every journey memorable.",cta:"EXPLORE TOURS"},
+{id:"yatras",cls:"s-yatra",name:"AMETHYST YATRAS",tag:"Travel with purpose.",d:"Enriching cultural and spiritual journeys with carefully planned temple visits, darshan experiences and pilgrimage routes.",cta:"EXPLORE YATRAS"},
+{id:"retreats",cls:"s-retreat",name:"AMETHYST RETREATS",tag:"Disconnect. Recharge. Return refreshed.",d:"Handpicked nature escapes, peaceful stays and rejuvenating experiences designed to help you slow down and reconnect.",cta:"EXPLORE RETREATS"},
+{id:"surprises",cls:"s-surprise",name:"AMETHYST SURPRISES",tag:"Make their moment unforgettable.",d:"Custom-tailored surprises and celebrations, from terrace decor and romantic experiences to birthdays, anniversaries and milestone celebrations.",cta:"CREATE A SURPRISE"}];
 const EXPERIENCES=[
 {cat:"Weekend Escape",name:"Courtallam & Mekkarai",d:"Waterfall mornings and quiet hill air in a relaxed weekend getaway.",dur:"2 Days / 1 Night",price:"₹6,500",cls:"s-tour",img:"assets/images/courtallam.jpg"},
 {cat:"Spiritual Journey",name:"Thiruvannamalai",d:"Darshan and the Arunachala circuit, planned around the right timings.",dur:"12 Days",price:"₹2,499",cls:"s-yatra",img:"assets/images/thiruvannamalai.jpg"},
@@ -461,7 +466,7 @@ const sil=`<svg class="sil"><use href="#mtn"/></svg>`;
 document.getElementById("verticals").innerHTML=VERTICALS.map((v,i)=>`<article class="v rv" id="${v.id}"><div class="ph ${v.cls}"><div class="scene" ${bg(MEDIA.verticals[i])}></div>${MEDIA.verticals[i]?"":sil}<span class="tag">${MEDIA.verticals[i]?"":""}</span></div><div class="body"><h3>${v.name}</h3><div class="tl">${v.tag}</div><p class="d">${v.d}</p><a class="link" href="${v.id}/">${v.cta}</a></div></article>`).join("");
 document.getElementById("egrid").innerHTML=EXPERIENCES.map(e=>`<article class="e rv"><div class="ph ${e.cls}"><div class="scene" ${bg(e.img)}></div>${e.img?"":sil}</div><div class="body"><div class="cat">${e.cat.toUpperCase()}</div><h3>${e.name}</h3><p>${e.d}</p><div class="meta"><span>${e.dur}<br><span style="color:var(--mute);font-size:12px">from</span> <b>${e.price}</b></span><a class="link" href="${WA}${encodeURIComponent("Hi Amethyst, I'd like details on "+e.name)}" target="_blank" rel="noopener">ENQUIRE</a></div></div></article>`).join("");
 document.getElementById("ig").innerHTML=GRID.map((c,i)=>{const g=MEDIA.gallery[i];return `<div class="ph ${c}" ${g?`data-full="${g}"`:""}><div class="scene" ${bg(g)}></div></div>`}).join("");
-const T="TRAVEL  •  YATRAS  •  RETREATS  •  SURPRISES  •  ";document.getElementById("band").textContent=T.repeat(8);
+const T="TRAVEL • YATRAS • RETREATS • SURPRISES • ";document.getElementById("band").textContent=T.repeat(8);
 document.getElementById("heroVid").hidden=false;document.querySelector(".hero").classList.add("hasmedia");
 MEDIA.rentals.forEach((u,i)=>{const e=document.querySelectorAll(".r .scene")[i];if(e&&u){e.style.backgroundImage=`url('${u}')`;e.style.filter="none"}});
 
