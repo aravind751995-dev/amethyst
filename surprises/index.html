@@ -32,7 +32,7 @@ footer{background:#1b0628;color:#d8cfe0;padding:40px 0;font-size:13px}.foot{disp
 @media(max-width:600px){nav{height:auto;padding:12px 0;flex-wrap:wrap}.links{order:3;width:100%;padding-top:7px}.hero{min-height:560px}.hero-in{padding:100px 0 55px}.grid{margin-top:32px}.settings{grid-template-columns:1fr}.secret{padding:42px 24px}.price{align-items:flex-start;flex-direction:column}.outline{align-self:flex-start}}
 </style>
 <style>
-/* Amethyst  refined editorial layer */
+/* Amethyst refined editorial layer */
 :root{--gold-glow:rgba(201,162,74,.28)}
 body{letter-spacing:.005em}
 header{border-bottom:0;box-shadow:0 4px 24px rgba(33,26,37,.04)}
@@ -52,7 +52,7 @@ header{border-bottom:0;box-shadow:0 4px 24px rgba(33,26,37,.04)}
 .crumb{opacity:.85;transition:opacity .3s ease}.crumb:hover{opacity:1}
 main{padding:90px 0}
 .topline h2,.intro h2,.section-head h2{letter-spacing:-.02em}
-.topline h2:after,.intro h2:after,.section-head h2:after{content:"";display:block;width:54px;height:2px;margin-top:18px;background:linear-gradient(90deg,var(--gold),var(--soft),transparent)}
+
 .grid{gap:34px;margin-top:52px}
 .card{border:0!important;border-radius:2px;overflow:hidden;box-shadow:0 12px 35px rgba(33,26,37,.06);transition:transform .55s cubic-bezier(.2,.7,.2,1),box-shadow .55s ease}
 .card:hover{transform:translateY(-8px)!important;box-shadow:0 24px 55px rgba(59,10,90,.13)}
@@ -81,10 +81,10 @@ footer{border-top:0}
 </style>
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
-  const targets=document.querySelectorAll('main .card,main .section,main .intro,main .cta,main .topline');
-  targets.forEach((el,i)=>{el.classList.add('reveal');el.style.transitionDelay=Math.min(i*70,420)+'ms'});
-  const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target)}}),{threshold:.08});
-  targets.forEach(el=>io.observe(el));
+ const targets=document.querySelectorAll('main .card,main .section,main .intro,main .cta,main .topline');
+ targets.forEach((el,i)=>{el.classList.add('reveal');el.style.transitionDelay=Math.min(i*70,420)+'ms'});
+ const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target)}}),{threshold:.08});
+ targets.forEach(el=>io.observe(el));
 });
 </script><style id="amethyst-luxury-motion">
 html{scroll-behavior:smooth}body{overflow-x:hidden}body:before{content:"";position:fixed;top:0;left:0;width:100%;height:2px;transform:scaleX(var(--scroll,0));transform-origin:left;background:linear-gradient(90deg,var(--gold),var(--soft),var(--violet));z-index:9999;pointer-events:none}
@@ -106,7 +106,12 @@ header{transition:background .45s ease,box-shadow .45s ease}header.scrolled{box-
 </script><script type="application/ld+json">
 {"@context":"https://schema.org","@type":"TravelAgency","name":"Amethyst","url":"https://aravind751995-dev.github.io/amethyst/surprises/","telephone":"+91-9363402164","description":"Amethyst Surprises plans personalised surprise experiences in Chennai for birthdays, anniversaries, proposals and private celebrations, including terrace, home, ECR and private dining setups.","areaServed":["Chennai","Tamil Nadu","India"],"address":{"@type":"PostalAddress","addressLocality":"Chennai","addressRegion":"Tamil Nadu","addressCountry":"IN"},"sameAs":["https://www.instagram.com/amethyst_escapes/reels/","https://share.google/rzrZV1XfzGLne0m9T"]}
 </script>
-</head>
+
+<style id="amethyst-type-alignment-final">
+/* Final typography and alignment pass */
+html{font-size:16px}body{font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}h1,h2,h3{letter-spacing:-.018em}p{max-width:68ch}.wrap{width:100%}.eyebrow{font-size:11px;line-height:1.4;letter-spacing:.18em}.btn,.link,.outline{font-size:11px;line-height:1.2}.btn{padding:14px 22px}.link{display:inline-block}.hero h1{line-height:1.04}.hero p,.hero p.sub{line-height:1.75}.head,.topline{align-items:flex-end}.topline h2,.section-head h2,.intro h2{margin-bottom:0}.topline h2:after,.intro h2:after,.section-head h2:after{display:none!important}.card h3,.v h3,.e h3,.r h3,.setting h3{line-height:1.18}.desc,.card .desc{line-height:1.7}.cat{line-height:1.4}.tags span,.uses span{line-height:1.4}.cta p,.final p{line-height:1.75}.fgrid{align-items:start}@media(max-width:760px){body{font-size:14px;line-height:1.7}.wrap{padding-left:20px;padding-right:20px}section,main{padding-top:72px;padding-bottom:72px}.hero{min-height:560px!important}.hero h1{font-size:clamp(42px,12vw,64px)!important;line-height:1.04}.hero p,.hero p.sub{font-size:15px!important;line-height:1.7}.hero .wrap,.hero .in,.hero .hero-in{padding-left:20px!important;padding-right:20px!important}.head,.topline{align-items:flex-start}.v .body,.e .body,.r .body,.card .body{padding:22px!important}.v h3,.e h3,.r h3,.card h3{font-size:22px}.final h2,.cta h2{line-height:1.1}.menu{font-size:12px}.logo{font-size:18px}}
+@media(min-width:761px){.hero .wrap,.hero .in,.hero .hero-in{max-width:1180px;margin-left:auto;margin-right:auto}.hero h1{max-width:900px}.hero p{max-width:680px}}
+</style></head>
 <body>
 <header><div class="wrap"><nav>
 <a class="logo" href="../"><img src="../logo-gem.png" width="36" height="50" alt="">AMETHYST</a>
@@ -120,14 +125,14 @@ header{transition:background .45s ease,box-shadow .45s ease}header.scrolled{box-
 </section>
 
 <main><div class="wrap">
-<section class="intro"><span class="eyebrow" style="color:var(--gold)">THE AMETHYST APPROACH</span><h2>One idea. One secret. One beautifully planned moment.</h2><p>Tell us who you are surprising, what you want them to feel and where you want the moment to happen. We shape the experience around your story  from the first setup to the final reveal.</p></section>
+<section class="intro"><span class="eyebrow" style="color:var(--gold)">THE AMETHYST APPROACH</span><h2>One idea. One secret. One beautifully planned moment.</h2><p>Tell us who you are surprising, what you want them to feel and where you want the moment to happen. We shape the experience around your story from the first setup to the final reveal.</p></section>
 
 <section class="grid">
-<article class="card"><div class="photo" style="background-image:linear-gradient(135deg,rgba(59,10,90,.08),rgba(33,6,50,.18)),url('../assets/images/chennai.jpg')"></div><div class="body"><div class="cat">ROMANTIC MOMENTS</div><h3>Terrace Surprise</h3><p class="desc">Fairy lights, candles, flowers, a private table and personalised details  styled around your occasion.</p><div class="price"><div><strong>Custom experience</strong><div class="duration">For couples & milestones</div></div><a class="outline" href="https://wa.me/919363402164?text=Hi%20Amethyst%2C%20I%27d%20like%20to%20plan%20a%20Terrace%20Surprise." target="_blank">ENQUIRE</a></div><div class="tags"><span>Terrace decor</span><span>Candlelight</span><span>Personalised setup</span></div></div></article>
+<article class="card"><div class="photo" style="background-image:linear-gradient(135deg,rgba(59,10,90,.08),rgba(33,6,50,.18)),url('../assets/images/chennai.jpg')"></div><div class="body"><div class="cat">ROMANTIC MOMENTS</div><h3>Terrace Surprise</h3><p class="desc">Fairy lights, candles, flowers, a private table and personalised details styled around your occasion.</p><div class="price"><div><strong>Custom experience</strong><div class="duration">For couples & milestones</div></div><a class="outline" href="https://wa.me/919363402164?text=Hi%20Amethyst%2C%20I%27d%20like%20to%20plan%20a%20Terrace%20Surprise." target="_blank">ENQUIRE</a></div><div class="tags"><span>Terrace decor</span><span>Candlelight</span><span>Personalised setup</span></div></div></article>
 
-<article class="card"><div class="photo" style="background-image:linear-gradient(135deg,rgba(59,10,90,.08),rgba(33,6,50,.18)),url('../assets/images/surprise-1.jpg')"></div><div class="body"><div class="cat">CELEBRATION MOMENTS</div><h3>Birthday Surprise</h3><p class="desc">A celebration planned around the person  from elegant styling and cake moments to a carefully timed reveal.</p><div class="price"><div><strong>Custom experience</strong><div class="duration">Home, terrace or private venue</div></div><a class="outline" href="https://wa.me/919363402164?text=Hi%20Amethyst%2C%20I%27d%20like%20to%20plan%20a%20Birthday%20Surprise." target="_blank">ENQUIRE</a></div><div class="tags"><span>Birthday decor</span><span>Cake moment</span><span>Theme styling</span></div></div></article>
+<article class="card"><div class="photo" style="background-image:linear-gradient(135deg,rgba(59,10,90,.08),rgba(33,6,50,.18)),url('../assets/images/surprise-1.jpg')"></div><div class="body"><div class="cat">CELEBRATION MOMENTS</div><h3>Birthday Surprise</h3><p class="desc">A celebration planned around the person from elegant styling and cake moments to a carefully timed reveal.</p><div class="price"><div><strong>Custom experience</strong><div class="duration">Home, terrace or private venue</div></div><a class="outline" href="https://wa.me/919363402164?text=Hi%20Amethyst%2C%20I%27d%20like%20to%20plan%20a%20Birthday%20Surprise." target="_blank">ENQUIRE</a></div><div class="tags"><span>Birthday decor</span><span>Cake moment</span><span>Theme styling</span></div></div></article>
 
-<article class="card"><div class="photo" style="background-image:linear-gradient(135deg,rgba(59,10,90,.08),rgba(33,6,50,.18)),url('../assets/images/surprise-2.jpg')"></div><div class="body"><div class="cat">MILESTONE CELEBRATIONS</div><h3>Anniversary Experience</h3><p class="desc">A more intimate way to celebrate another year together  with private dining, romantic styling and personal touches.</p><div class="price"><div><strong>Custom experience</strong><div class="duration">Couples & family milestones</div></div><a class="outline" href="https://wa.me/919363402164?text=Hi%20Amethyst%2C%20I%27d%20like%20to%20plan%20an%20Anniversary%20Experience." target="_blank">ENQUIRE</a></div><div class="tags"><span>Private dining</span><span>Flowers & candles</span><span>Memory details</span></div></div></article>
+<article class="card"><div class="photo" style="background-image:linear-gradient(135deg,rgba(59,10,90,.08),rgba(33,6,50,.18)),url('../assets/images/surprise-2.jpg')"></div><div class="body"><div class="cat">MILESTONE CELEBRATIONS</div><h3>Anniversary Experience</h3><p class="desc">A more intimate way to celebrate another year together with private dining, romantic styling and personal touches.</p><div class="price"><div><strong>Custom experience</strong><div class="duration">Couples & family milestones</div></div><a class="outline" href="https://wa.me/919363402164?text=Hi%20Amethyst%2C%20I%27d%20like%20to%20plan%20an%20Anniversary%20Experience." target="_blank">ENQUIRE</a></div><div class="tags"><span>Private dining</span><span>Flowers & candles</span><span>Memory details</span></div></div></article>
 
 <article class="card"><div class="photo" style="background-image:linear-gradient(135deg,rgba(59,10,90,.08),rgba(33,6,50,.18)),url('../assets/images/surprise-3.jpg')"></div><div class="body"><div class="cat">THE BIG QUESTION</div><h3>Proposal Experience</h3><p class="desc">From choosing the setting to timing the reveal, we coordinate the details so you can focus on the moment.</p><div class="price"><div><strong>Custom experience</strong><div class="duration">Private & romantic setups</div></div><a class="outline" href="https://wa.me/919363402164?text=Hi%20Amethyst%2C%20I%27d%20like%20to%20plan%20a%20Proposal%20Experience." target="_blank">ENQUIRE</a></div><div class="tags"><span>Proposal styling</span><span>Reveal coordination</span><span>Photography add-on</span></div></div></article>
 </section>
@@ -143,7 +148,7 @@ header{transition:background .45s ease,box-shadow .45s ease}header.scrolled{box-
 <section class="secret"><div class="secret-grid"><div><span class="eyebrow">THE SECRET STAYS WITH US</span><h2>You plan it. They discover it.</h2><p>Amethyst Surprises is built around discreet coordination. We work with the planner first, confirm the important details, and coordinate the setup so the person being surprised doesn't need to know what is coming.</p></div><div class="checklist"><div>Private planning over WhatsApp</div><div>Location & timing coordination</div><div>Personalised decor and styling</div><div>Cake, flowers, music & photo add-ons</div><div>Custom ideas welcome</div></div></div></section>
 
 <section class="section local-seo"><div class="section-head"><span class="eyebrow">SURPRISE EXPERIENCES IN CHENNAI</span><h2>Private Celebrations, Thoughtfully Planned in Chennai.</h2><p>Planning a birthday surprise, anniversary setup, proposal or private celebration in Chennai? Amethyst Surprises quietly coordinates the setting, styling, timing and personalised details so the moment feels personal rather than predictable. We can plan concepts for terraces, homes, ECR and beachside settings, private dining and other suitable venues, subject to permissions.</p><p style="margin-top:16px">Tell us the occasion, date, preferred part of Chennai and your idea. We will help shape the experience around the person you are surprising.</p></div></section>
-<section class="cta"><h2>Tell us what you're imagining.</h2><p>A few details are enough  the occasion, date, place and your idea. We'll take care of the rest, discreetly.</p><a class="btn" href="https://wa.me/919363402164?text=Hi%20Amethyst%2C%20I%27m%20planning%20a%20surprise.%20Occasion%3A%20%7C%20Date%3A%20%7C%20Location%3A%20%7C%20Budget%3A%20%7C%20Idea%3A" target="_blank">START THE CONVERSATION</a></section>
+<section class="cta"><h2>Tell us what you're imagining.</h2><p>A few details are enough the occasion, date, place and your idea. We'll take care of the rest, discreetly.</p><a class="btn" href="https://wa.me/919363402164?text=Hi%20Amethyst%2C%20I%27m%20planning%20a%20surprise.%20Occasion%3A%20%7C%20Date%3A%20%7C%20Location%3A%20%7C%20Budget%3A%20%7C%20Idea%3A" target="_blank">START THE CONVERSATION</a></section>
 </div></main>
 
 <footer><div class="wrap foot"><div>Chennai, Tamil Nadu · © 2026 Amethyst · Experiences Beyond Ordinary.</div><div><a href="https://www.instagram.com/amethyst_escapes/reels/" target="_blank">Instagram</a> · <a href="https://share.google/rzrZV1XfzGLne0m9T" target="_blank">Google Reviews</a> · <a href="https://wa.me/919363402164" target="_blank">WhatsApp 93634 02164</a></div></div></footer>
