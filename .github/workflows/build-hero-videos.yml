@@ -1,0 +1,43 @@
+name: Build local hero videos
+
+on:
+  push:
+    paths:
+      - '.github/workflows/build-hero-videos.yml'
+      - 'assets/video-sources/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Build cinematic hero loops
+        shell: bash
+        run: |
+          set -e
+          mkdir -p assets/videos
+          make_video() {
+            local src="$1"
+            local out="$2"
+            local zoom="$3"
+            ffmpeg -y -loop 1 -i "$src" -t 10 -vf "scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,zoompan=z='min($zoom,zoom+0.0005)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=1:s=1920x1080:fps=30,format=yuv420p" -an -movflags +faststart "$out"
+          }
+          make_video assets/video-sources/home.jpg assets/videos/home-hero.mp4 1.10
+          make_video assets/video-sources/tours.jpg assets/videos/tours-hero.mp4 1.12
+          make_video assets/video-sources/yatras.jpg assets/videos/yatras-hero.mp4 1.08
+          make_video assets/video-sources/retreats.jpg assets/videos/retreats-hero.mp4 1.12
+          make_video assets/video-sources/surprises.jpg assets/videos/surprises-hero.mp4 1.10
+      - name: Commit generated videos
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/videos
+          git diff --cached --quiet && exit 0
+          git commit -m "Build self-hosted cinematic hero videos [skip ci]"
+          git push
