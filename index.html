@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Amethyst | Tours, Yatras, Retreats, Surprises & Traveller Rentals in Chennai</title>
+<meta name="description" content="Amethyst is Chennai's boutique travel and experiential management company: curated tours, spiritual yatras, nature retreats, celebration surprises and premium Traveller & Urbania rentals.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--deep:#3B0A5A;--royal:#5B1685;--violet:#7B2CBF;--gold:#C9A24A;--soft:#E3C56E;--bg:#FAF9F6;--card:#fff;--ink:#211A25;--mute:#6F6872;--line:rgba(33,26,37,.12);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root:not([data-theme="light"]){}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17101c;--card:#201729;--ink:#f1ecf4;--mute:#b0a6b6;--line:rgba(255,255,255,.14)}}
+:root[data-theme="dark"]{--bg:#17101c;--card:#201729;--ink:#f1ecf4;--mute:#b0a6b6;--line:rgba(255,255,255,.14)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.7 Montserrat,system-ui,sans-serif}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-height:1.15;margin:0}
+h2{font-size:clamp(30px,5vw,50px)}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+.eyebrow{font-size:12px;letter-spacing:.2em;color:var(--gold);font-weight:600}
+.lead{color:var(--mute);max-width:560px;margin-top:16px}
+.btn{display:inline-block;padding:15px 28px;font-size:12px;letter-spacing:.14em;font-weight:600;border:1px solid var(--gold);background:var(--gold);color:var(--deep);transition:.25s;cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--soft)}
+.btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
+.btn.ghost:hover{background:rgba(255,255,255,.12)}
+.btn.dark{background:var(--deep);color:#fff;border-color:var(--deep)}
+.btn.dark:hover{background:var(--royal)}
+.link{font-size:12px;letter-spacing:.14em;font-weight:600;color:var(--royal);border-bottom:1px solid var(--gold);padding-bottom:3px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .link{color:var(--soft)}}
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(250,249,246,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) header{background:rgba(23,16,28,.94)}}
+:root[data-theme="dark"] header{background:rgba(23,16,28,.94)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Playfair Display',serif;font-weight:700;letter-spacing:.18em;font-size:19px}
+.gem{width:26px;height:26px}
+.menu{display:flex;gap:24px;font-size:12px;font-weight:500;letter-spacing:.06em}
+.menu a:hover{color:var(--violet)}
+.burger{display:none;background:none;border:0;color:var(--ink);font-size:26px;cursor:pointer;padding:6px}
+.nav .btn{padding:11px 18px}
+@media(max-width:1020px){.menu{display:none;position:absolute;top:72px;left:0;right:0;flex-direction:column;background:var(--bg);padding:20px 24px;gap:16px;border-bottom:1px solid var(--line)}.menu.open{display:flex}.burger{display:block}.nav .btn{display:none}}
+/* image slots: paint scenes in CSS; swap in photos via data-img */
+.ph{position:relative;overflow:hidden;background:var(--deep)}
+.ph .scene{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 1.2s ease}
+.ph:hover .scene{transform:scale(1.05)}
+.s-tour .scene{background:linear-gradient(180deg,#6d3a8f 0%,#c58a9c 55%,#e9c987 70%),#3B0A5A}
+.s-yatra .scene{background:linear-gradient(180deg,#2a0b40 0%,#8c3f6a 50%,#e3a658 78%)}
+.s-retreat .scene{background:linear-gradient(180deg,#1f4a46 0%,#3f7a62 55%,#9db98a 100%)}
+.s-surprise .scene{background:linear-gradient(180deg,#240636 0%,#4b1170 60%,#7a3b8e 100%)}
+.s-van .scene{background:linear-gradient(180deg,#3B0A5A 0%,#5B1685 70%,#7B2CBF)}
+.ph svg.sil{position:absolute;left:0;bottom:0;width:100%;height:55%;opacity:.55}
+.ph .tag{position:absolute;left:14px;bottom:12px;font-size:10px;letter-spacing:.14em;color:rgba(255,255,255,.7)}
+/* hero */
+.hero{position:relative;min-height:calc(100svh - 72px);display:flex;align-items:flex-end;color:#fff;padding:0}
+.hero .ph{position:absolute;inset:0}
+.hero .scene{background:linear-gradient(180deg,rgba(59,10,90,.55) 0%,rgba(59,10,90,.35) 40%,rgba(33,6,50,.9) 100%),linear-gradient(120deg,#5B1685,#c58a6a 70%,#E3C56E)}
+.hero .in{position:relative;padding:120px 24px 72px;max-width:1180px;margin:0 auto;width:100%}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(42px,8vw,96px);line-height:1.02;font-weight:600;max-width:900px;text-wrap:balance}
+.hero p.sub{max-width:560px;margin:24px 0 36px;color:rgba(255,255,255,.88);font-size:17px}
+.hero .eyebrow{color:var(--soft);margin-bottom:22px;display:block}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.fade{animation:rise 1.1s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+/* intro */
+.intro{text-align:center}
+.intro h2{max-width:720px;margin:14px auto 28px}
+.intro p.lead{margin:0 auto;font-size:18px;max-width:700px}
+/* verticals */
+.vgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:56px}
+.v{background:var(--card);border:1px solid var(--line)}
+.v .ph{aspect-ratio:16/10}
+.v .body{padding:28px 28px 32px}
+.v h3{font-size:26px;margin-bottom:6px}
+.v .tl{color:var(--gold);font-weight:600;font-size:14px;margin-bottom:10px}
+.v p.d{color:var(--mute);font-size:15px;margin-bottom:22px}
+@media(max-width:760px){.vgrid{grid-template-columns:1fr}}
+/* experiences */
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.egrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;margin-top:48px}
+.e{background:var(--card);border:1px solid var(--line);transition:.3s}
+.e:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(59,10,90,.14)}
+.e .ph{aspect-ratio:4/3}
+.e .body{padding:22px}
+.e .cat{font-size:11px;letter-spacing:.14em;color:var(--violet);font-weight:600}
+.e h3{font-size:22px;margin:6px 0 8px}
+.e p{font-size:14px;color:var(--mute)}
+.e .meta{display:flex;justify-content:space-between;align-items:center;margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font-size:13px}
+.e .meta b{font-family:'Playfair Display',serif;font-size:18px}
+.note{font-size:12px;color:var(--mute);margin-top:20px}
+/* rentals */
+.rent{background:var(--card);border-block:1px solid var(--line)}
+.uses{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 8px}
+.uses span{border:1px solid var(--line);padding:7px 16px;font-size:13px;color:var(--mute)}
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
+.r{border:1px solid var(--line);background:var(--bg)}
+.r .ph{aspect-ratio:16/10}
+.r .body{padding:24px}
+.r h3{font-size:22px;letter-spacing:.06em}
+.r .sm{font-size:14px;color:var(--mute);margin:6px 0 14px}
+.r ul{list-style:none;margin:0;padding:0;font-size:14px}
+.r li{padding:7px 0;border-top:1px solid var(--line);display:flex;gap:10px}
+.r li:before{content:"";width:6px;height:6px;margin-top:9px;background:var(--gold);transform:rotate(45deg);flex:none}
+.rfoot{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-top:36px}
+@media(max-width:900px){.rgrid{grid-template-columns:1fr}}
+/* why */
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:56px}
+.why svg{width:44px;height:44px;stroke:var(--violet);fill:none;stroke-width:1.4;margin-bottom:16px}
+.why .g{stroke:var(--gold)}
+.why h3{font-size:20px;letter-spacing:.12em;margin-bottom:8px}
+.why p{font-size:14px;color:var(--mute)}
+@media(max-width:900px){.why{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.why{grid-template-columns:1fr}}
+/* process */
+.proc{background:var(--deep);color:#fff}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);margin-top:56px;border-top:1px solid rgba(227,197,110,.4)}
+.step{padding:28px 24px 0 0;position:relative}
+.step:before{content:"";position:absolute;top:-5px;left:0;width:9px;height:9px;background:var(--gold);transform:rotate(45deg)}
+.step b{font-family:'Playfair Display',serif;font-size:34px;color:var(--soft);font-weight:500}
+.step p{margin-top:6px;font-size:16px}
+@media(max-width:760px){.steps{grid-template-columns:1fr;border-top:0;border-left:1px solid rgba(227,197,110,.4)}.step{padding:0 0 28px 28px}.step:before{top:8px;left:-5px}}
+/* surprises */
+.sur{background:linear-gradient(135deg,#240636,var(--deep) 60%,var(--royal));color:#fff;position:relative;overflow:hidden}
+.sur .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.sur h2{margin:16px 0 22px;font-size:clamp(32px,5vw,54px)}
+.sur p{color:rgba(255,255,255,.82);max-width:480px;margin-bottom:32px}
+.sur .ph{aspect-ratio:4/5;border:1px solid var(--gold);outline:1px solid rgba(201,162,74,.4);outline-offset:10px}
+@media(max-width:860px){.sur .grid{grid-template-columns:1fr}.sur .ph{aspect-ratio:4/3;margin:0 10px}}
+/* testimonials */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.t{background:var(--card);border:1px solid var(--line);padding:32px}
+.stars{color:var(--gold);letter-spacing:3px;font-size:14px}
+.t p{margin:14px 0 22px;font-family:'Playfair Display',serif;font-size:18px;line-height:1.55}
+.t small{color:var(--mute);font-size:13px}
+.t b{display:block;font-size:14px}
+@media(max-width:900px){.tgrid{grid-template-columns:1fr}}
+/* grid */
+.ig{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:170px;gap:10px;margin:44px 0 36px}
+.ig .ph:nth-child(1),.ig .ph:nth-child(6){grid-row:span 2}
+.ig .ph:nth-child(4){grid-column:span 2}
+@media(max-width:700px){.ig{grid-template-columns:1fr 1fr;grid-auto-rows:140px}.ig .ph:nth-child(4){grid-column:span 2}}
+/* final */
+.final{background:linear-gradient(160deg,var(--deep),var(--royal));color:#fff;text-align:center;padding:120px 0}
+.final h2{font-size:clamp(34px,6vw,64px);max-width:760px;margin:0 auto 22px}
+.final p{max-width:560px;margin:0 auto 36px;color:rgba(255,255,255,.85)}
+.final .cta{justify-content:center}
+/* footer */
+footer{background:#1b0628;color:#d8cfe0;padding:72px 0 40px;font-size:14px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+footer h4{font-size:12px;letter-spacing:.16em;color:var(--soft);margin:0 0 16px}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+footer a:hover{color:var(--soft)}
+.soc{display:flex;gap:18px;margin-top:20px;flex-wrap:wrap}
+.copy{margin-top:48px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);font-size:12px;color:#9a8fa5}
+@media(max-width:760px){.fgrid{grid-template-columns:1fr 1fr}.fgrid>div:first-child{grid-column:span 2}}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+.ph video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero.hasmedia .scene{background:linear-gradient(180deg,rgba(33,6,50,.45) 0%,rgba(59,10,90,.25) 45%,rgba(24,4,36,.88) 100%)}
+.v .ph:after,.sur .ph:after{content:"";position:absolute;inset:12px;border:1px solid rgba(227,197,110,.55);pointer-events:none}
+.band{background:var(--deep);color:var(--soft);overflow:hidden;white-space:nowrap;padding:16px 0;font-size:12px;letter-spacing:.3em;font-weight:500}
+.band .track{display:inline-block;animation:slide 40s linear infinite}
+@keyframes slide{to{transform:translateX(-50%)}}
+.film{background:#1b0628;color:#fff}
+.frame{position:relative;margin-top:44px;aspect-ratio:16/9;border:1px solid var(--gold);outline:1px solid rgba(201,162,74,.4);outline-offset:10px;overflow:hidden;background:var(--deep)}
+.frame .ph{position:absolute;inset:0}
+.play{position:absolute;top:50%;left:50%;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;border:1px solid var(--soft);background:rgba(59,10,90,.55);color:var(--soft);font-size:26px;cursor:pointer;backdrop-filter:blur(6px);transition:.3s}
+.play:hover{background:var(--gold);color:var(--deep)}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(15,3,24,.94);display:flex;align-items:center;justify-content:center;cursor:zoom-out}
+.lb img{max-width:92vw;max-height:88vh}
+.ig .ph[data-full]{cursor:zoom-in}
+.rv{opacity:0;transform:translateY(16px);transition:opacity .8s,transform .8s}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="gem" viewBox="0 0 32 32"><path d="M16 2l11 8-3 18H8L5 10z" fill="#7B2CBF"/><path d="M16 2l11 8H5z" fill="#C9A24A"/><path d="M16 2l-4 8 4 18 4-18z" fill="#5B1685"/></symbol>
+<symbol id="mtn" viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 120V70l60-40 50 35 70-55 80 60 60-30 80 40v40z" fill="#1b0628"/></symbol>
+</defs></svg>
+
+<header><div class="wrap nav">
+<a class="logo" href="#top" aria-label="Amethyst home"><svg class="gem"><use href="#gem"/></svg>AMETHYST</a>
+<nav class="menu" id="menu" aria-label="Main">
+<a href="#experiences">Experiences</a><a href="#tours">Tours</a><a href="#yatras">Yatras</a><a href="#retreats">Retreats</a><a href="#surprises">Surprises</a><a href="#rentals">Rentals</a><a href="#about">About</a><a href="#contact">Contact</a>
+</nav>
+<a class="btn dark" href="#contact">PLAN YOUR EXPERIENCE</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+</div></header>
+
+<main id="top">
+<section class="hero" style="padding:0">
+<div class="ph s-tour"><video id="heroVid" muted loop playsinline preload="metadata" aria-hidden="true" hidden></video><div class="scene" id="heroScene"></div><svg class="sil"><use href="#mtn"/></svg></div>
+<div class="in">
+<span class="eyebrow fade">TRAVEL • YATRAS • RETREATS • SURPRISES</span>
+<h1 class="fade" style="animation-delay:.15s">Make Every Journey Extraordinary.</h1>
+<p class="sub fade" style="animation-delay:.3s">Curated journeys, spiritual escapes, rejuvenating retreats and unforgettable moments, thoughtfully planned by Amethyst.</p>
+<div class="cta fade" style="animation-delay:.45s"><a class="btn" href="#experiences">EXPLORE EXPERIENCES</a><a class="btn ghost" href="#contact">PLAN WITH AMETHYST</a></div>
+</div>
+</section>
+<div class="band" aria-hidden="true"><div class="track" id="band"></div></div>
+
+<section class="intro" id="about"><div class="wrap rv">
+<span class="eyebrow">ABOUT AMETHYST</span>
+<h2>More Than Travel.<br>We Create Experiences.</h2>
+<p class="lead">Welcome to Amethyst, Chennai's premier travel and experiential management company. We transform ordinary days into unforgettable memories through thoughtfully curated journeys, meaningful spiritual experiences, rejuvenating escapes and beautifully planned celebrations.</p>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+<div class="vgrid" id="verticals"></div>
+</div></section>
+
+<section id="experiences" style="background:var(--card);border-block:1px solid var(--line)"><div class="wrap">
+<div class="head rv"><div><span class="eyebrow">FEATURED EXPERIENCES</span><h2 style="margin-top:12px">Where Will You Go Next?</h2></div><a class="link" href="#contact">ASK ABOUT CUSTOM TRIPS</a></div>
+<div class="egrid" id="egrid"></div>
+<p class="note">Team note: add or edit packages in the EXPERIENCES list at the bottom of this file. Prices shown are placeholders.</p>
+</div></section>
+
+<section class="rent" id="rentals" style="background:var(--bg)"><div class="wrap">
+<div class="rv">
+<span class="eyebrow">AMETHYST TRAVEL RENTALS</span>
+<h2 style="margin-top:12px">Travel Together. Travel Better.</h2>
+<p class="lead" style="font-size:18px;color:var(--ink)">Premium Traveller &amp; Urbania Rentals in Chennai</p>
+<p class="lead">Group transportation for family trips, corporate travel, temple journeys, outstation trips, weddings, airport transfers, group tours and private holidays.</p>
+<div class="uses"><span>Family trips</span><span>Corporate travel</span><span>Temple journeys</span><span>Outstation</span><span>Weddings</span><span>Airport transfers</span><span>Group tours</span><span>Private holidays</span></div>
+</div>
+<div class="rgrid">
+<article class="r rv"><div class="ph s-van" style="aspect-ratio:16/10"><div class="scene"></div><span class="tag">PHOTO: FORCE TRAVELLER</span></div><div class="body"><h3>FORCE TRAVELLER</h3><p class="sm">AC Traveller options for comfortable group travel.</p><ul><li>AC</li><li>Comfortable seating</li><li>Music system</li><li>Experienced driver</li><li>Group travel</li><li>Local &amp; outstation</li></ul></div></article>
+<article class="r rv"><div class="ph s-van"><div class="scene" style="filter:hue-rotate(-12deg)"></div><span class="tag">PHOTO: FORCE URBANIA</span></div><div class="body"><h3>FORCE URBANIA</h3><p class="sm">Premium group transportation with a more luxurious travel experience.</p><ul><li>Premium AC interior</li><li>Comfortable group seating</li><li>Spacious cabin</li><li>Professional driver</li><li>Airport / corporate / family travel</li><li>Local &amp; outstation</li></ul></div></article>
+<article class="r rv"><div class="ph s-van"><div class="scene" style="filter:hue-rotate(12deg)"></div><span class="tag">PHOTO: GROUP TRAVEL</span></div><div class="body"><h3>CUSTOM GROUP TRANSPORT</h3><p class="sm">Choose the vehicle based on group size, destination and trip requirements.</p><ul><li>Matched to your group size</li><li>Planned around your route</li><li>Chennai local and outstation</li></ul></div></article>
+</div>
+<div class="rfoot rv"><a class="btn dark" href="https://wa.me/919363402164?text=Hi%20Amethyst%2C%20I%27d%20like%20a%20rental%20quote" target="_blank" rel="noopener">GET RENTAL QUOTE</a><span style="color:var(--mute);font-size:14px">Available for Chennai local and outstation travel.</span></div>
+</div></section>
+
+<section style="background:var(--card);border-block:1px solid var(--line)"><div class="wrap">
+<div class="rv"><span class="eyebrow">THE AMETHYST WAY</span><h2 style="margin-top:12px">Why Travel With Amethyst?</h2></div>
+<div class="why rv">
+<div><svg viewBox="0 0 44 44"><path d="M22 4l14 10-4 24H12L8 14z"/><path class="g" d="M8 14h28"/></svg><h3>CURATED</h3><p>Every experience is thoughtfully selected and planned.</p></div>
+<div><svg viewBox="0 0 44 44"><circle cx="16" cy="16" r="6"/><circle cx="30" cy="18" r="5"/><path class="g" d="M6 38c0-8 20-8 20 0M24 38c0-6 14-6 14 0"/></svg><h3>PERSONAL</h3><p>Trips and experiences designed around your people and purpose.</p></div>
+<div><svg viewBox="0 0 44 44"><path d="M6 30c8-14 16 6 32-10"/><path class="g" d="M6 38h32"/><circle cx="38" cy="20" r="2"/></svg><h3>SEAMLESS</h3><p>We coordinate the details so you can enjoy the journey.</p></div>
+<div><svg viewBox="0 0 44 44"><path d="M22 38C8 28 6 18 14 13c4-2 7 0 8 3 1-3 4-5 8-3 8 5 6 15-8 25z"/><path class="g" d="M22 16v10"/></svg><h3>MEMORABLE</h3><p>We focus on creating moments you'll remember long after the trip.</p></div>
+</div></div></section>
+
+<section class="proc"><div class="wrap">
+<div class="rv"><span class="eyebrow">HOW IT WORKS</span><h2 style="margin-top:12px">From Idea To Memory</h2></div>
+<div class="steps rv">
+<div class="step"><b>01</b><p>Tell Us Your Idea</p></div>
+<div class="step"><b>02</b><p>We Curate The Experience</p></div>
+<div class="step"><b>03</b><p>We Handle The Details</p></div>
+<div class="step"><b>04</b><p>You Make The Memories</p></div>
+</div></div></section>
+
+<section class="sur" id="surprises-feature"><div class="wrap grid">
+<div class="rv"><span class="eyebrow">AMETHYST SURPRISES</span><h2>Some Moments Deserve More Than A Gift.</h2><p>From romantic terrace setups to birthdays, anniversaries and private celebrations, Amethyst Surprises creates beautifully planned moments around the people who matter most.</p><a class="btn" href="https://wa.me/919363402164?text=Hi%20Amethyst%2C%20I%27d%20like%20to%20plan%20a%20surprise" target="_blank" rel="noopener">PLAN A SURPRISE</a></div>
+<div class="ph s-surprise rv"><div class="scene"></div><span class="tag">PHOTO: TERRACE SETUP</span></div>
+</div></section>
+
+<section class="film"><div class="wrap">
+<div class="rv"><span class="eyebrow">THE FILM</span><h2 style="margin-top:12px">Watch The Journey</h2></div>
+<div class="frame rv" id="film"><div class="ph s-yatra" id="filmPh"><div class="scene"></div></div><button class="play" id="play" aria-label="Play film">&#9654;</button></div>
+</div></section>
+
+<section><div class="wrap">
+<div class="rv"><span class="eyebrow">TESTIMONIALS</span><h2 style="margin-top:12px">Memories From Our Travellers</h2></div>
+<div class="tgrid rv">
+<div class="t"><div class="stars">★★★★★</div><p>Placeholder: every detail of our weekend escape was handled. We just enjoyed the hills.</p><b>Priya</b><small>Weekend Escape</small></div>
+<div class="t"><div class="stars">★★★★★</div><p>Placeholder: a calm, well-organised yatra. Darshan was smooth for the whole family.</p><b>Karthik</b><small>Temple Yatra</small></div>
+<div class="t"><div class="stars">★★★★★</div><p>Placeholder: the terrace surprise was beautiful. She had no idea until the lights came on.</p><b>Arjun</b><small>Amethyst Surprises</small></div>
+</div></div></section>
+
+<section style="padding-top:0"><div class="wrap">
+<div class="rv" style="text-align:center"><span class="eyebrow">INSTAGRAM</span><h2 style="margin-top:12px">Follow The Journey</h2></div>
+<div class="ig" id="ig"></div>
+<div style="text-align:center"><a class="btn dark" href="https://instagram.com/amethysttours" target="_blank" rel="noopener">FOLLOW @AMETHYSTTOURS</a></div>
+</div></section>
+
+<section class="final" id="contact"><div class="wrap rv">
+<h2>Your Next Experience Starts Here.</h2>
+<p>Whether you're looking for adventure, spiritual connection, a peaceful escape or a moment worth celebrating, let's create something extraordinary.</p>
+<div class="cta"><a class="btn" href="#experiences">EXPLORE EXPERIENCES</a><a class="btn ghost" href="https://wa.me/919363402164" target="_blank" rel="noopener">WHATSAPP AMETHYST</a></div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+<div class="fgrid">
+<div><div class="logo" style="color:#fff"><svg class="gem"><use href="#gem"/></svg>AMETHYST</div><p style="margin-top:14px;font-family:'Playfair Display',serif;font-size:18px;color:var(--soft)">Experiences Beyond Ordinary.</p>
+<p style="margin-top:16px">Chennai, Tamil Nadu<br><a href="tel:+919363402164">93634 02164</a> (WhatsApp / Phone)</p>
+<div class="soc"><a href="https://instagram.com/amethysttours" target="_blank" rel="noopener">Instagram</a><a href="#" rel="noopener">Facebook</a><a href="#" rel="noopener">YouTube</a><a href="https://wa.me/919363402164" target="_blank" rel="noopener">WhatsApp</a></div></div>
+<div><h4>EXPLORE</h4><ul><li><a href="#tours">Tours</a></li><li><a href="#yatras">Yatras</a></li><li><a href="#retreats">Retreats</a></li><li><a href="#surprises">Surprises</a></li></ul></div>
+<div><h4>COMPANY</h4><ul><li><a href="#rentals">Traveller Rentals</a></li><li><a href="#rentals">Urbania Rentals</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></div>
+</div>
+<div class="copy">© 2026 Amethyst. All rights reserved.</div>
+</div></footer>
+
+<script>
+/* ===== EASY UPDATES: edit these lists. Set img to a data: URI or leave "" for the placeholder scene. ===== */
+const WA="https://wa.me/919363402164?text=";
+const VERTICALS=[
+{id:"tours",cls:"s-tour",name:"AMETHYST TOURS",tag:"Adventure starts here.",d:"Thrilling getaways, weekend escapes and seamless group expeditions designed to make every journey memorable.",cta:"EXPLORE TOURS →"},
+{id:"yatras",cls:"s-yatra",name:"AMETHYST YATRAS",tag:"Travel with purpose.",d:"Enriching cultural and spiritual journeys with carefully planned temple visits, darshan experiences and pilgrimage routes.",cta:"EXPLORE YATRAS →"},
+{id:"retreats",cls:"s-retreat",name:"AMETHYST RETREATS",tag:"Disconnect. Recharge. Return refreshed.",d:"Handpicked nature escapes, peaceful stays and rejuvenating experiences designed to help you slow down and reconnect.",cta:"EXPLORE RETREATS →"},
+{id:"surprises",cls:"s-surprise",name:"AMETHYST SURPRISES",tag:"Make their moment unforgettable.",d:"Custom-tailored surprises and celebrations, from terrace decor and romantic experiences to birthdays, anniversaries and milestone celebrations.",cta:"CREATE A SURPRISE →"}];
+const EXPERIENCES=[
+{cat:"Weekend Escape",name:"Courtallam & Mekkarai",d:"Waterfall mornings and quiet hill air in a relaxed weekend getaway.",dur:"2 Days",price:"₹ 0,000",cls:"s-tour",img:""},
+{cat:"Spiritual Journey",name:"Thiruvannamalai",d:"Darshan and the Arunachala circuit, planned around the right timings.",dur:"1–2 Days",price:"₹ 0,000",cls:"s-yatra",img:""},
+{cat:"Temple Yatra",name:"Siruvapuri",d:"A calm, well-paced temple visit with comfortable travel throughout.",dur:"1 Day",price:"₹ 0,000",cls:"s-yatra",img:""},
+{cat:"Nature Escape",name:"Jawadhu Hills",d:"Green slopes, forest air and an unhurried day away from the city.",dur:"1–2 Days",price:"₹ 0,000",cls:"s-retreat",img:""},
+{cat:"Family Experience",name:"Kanchipuram",d:"Temples, silk heritage and an easy day trip the whole family enjoys.",dur:"1 Day",price:"₹ 0,000",cls:"s-tour",img:""}];
+const GRID=["s-yatra","s-tour","s-retreat","s-tour","s-surprise","s-retreat","s-yatra","s-tour"];
+/* ===== MEDIA: paste photo/video paths (self-hosted: "images/hero.jpg", "videos/hero.mp4") or data: URIs ===== */
+const MEDIA={heroVideo:"",heroPoster:"",film:"",filmPoster:"",verticals:[],rentals:[],gallery:[]};
+const bg=i=>i?`style="background-image:url('${i}')"`:"";
+const sil=`<svg class="sil"><use href="#mtn"/></svg>`;
+document.getElementById("verticals").innerHTML=VERTICALS.map((v,i)=>`<article class="v rv" id="${v.id}"><div class="ph ${v.cls}"><div class="scene" ${bg(MEDIA.verticals[i])}></div>${MEDIA.verticals[i]?"":sil}<span class="tag">${MEDIA.verticals[i]?"":"PHOTO"}</span></div><div class="body"><h3>${v.name}</h3><div class="tl">${v.tag}</div><p class="d">${v.d}</p><a class="link" href="${WA}${encodeURIComponent("Hi Amethyst, I'm interested in "+v.name)}" target="_blank" rel="noopener">${v.cta}</a></div></article>`).join("");
+document.getElementById("egrid").innerHTML=EXPERIENCES.map(e=>`<article class="e rv"><div class="ph ${e.cls}"><div class="scene" ${bg(e.img)}></div>${e.img?"":sil}</div><div class="body"><div class="cat">${e.cat.toUpperCase()}</div><h3>${e.name}</h3><p>${e.d}</p><div class="meta"><span>${e.dur}<br><span style="color:var(--mute);font-size:12px">from</span> <b>${e.price}</b></span><a class="link" href="${WA}${encodeURIComponent("Hi Amethyst, I'd like details on "+e.name)}" target="_blank" rel="noopener">ENQUIRE</a></div></div></article>`).join("");
+document.getElementById("ig").innerHTML=GRID.map((c,i)=>{const g=MEDIA.gallery[i];return `<div class="ph ${c}" ${g?`data-full="${g}"`:""}><div class="scene" ${bg(g)}></div></div>`}).join("");
+const T="TRAVEL  •  YATRAS  •  RETREATS  •  SURPRISES  •  ";document.getElementById("band").textContent=T.repeat(8);
+if(MEDIA.heroVideo){const v=document.getElementById("heroVid");v.src=MEDIA.heroVideo;if(MEDIA.heroPoster)v.poster=MEDIA.heroPoster;v.hidden=false;v.muted=true;v.play().catch(()=>{});document.querySelector(".hero").classList.add("hasmedia")}
+else if(MEDIA.heroPoster){document.getElementById("heroScene").style.background=`linear-gradient(180deg,rgba(33,6,50,.45),rgba(24,4,36,.88)),url('${MEDIA.heroPoster}') center/cover`}
+MEDIA.rentals.forEach((u,i)=>{const e=document.querySelectorAll(".r .scene")[i];if(e&&u){e.style.background=`url('${u}') center/cover`;e.style.filter="none"}});
+if(MEDIA.filmPoster)document.querySelector("#filmPh .scene").style.background=`linear-gradient(rgba(33,6,50,.3),rgba(33,6,50,.5)),url('${MEDIA.filmPoster}') center/cover`;
+document.getElementById("play").onclick=function(){if(!MEDIA.film){this.insertAdjacentHTML("afterend",'<p style="position:absolute;bottom:18px;left:0;right:0;text-align:center;font-size:13px;color:#e3c56e">Add your film in MEDIA.film</p>');this.remove();return}
+const f=document.getElementById("film");f.innerHTML=`<video src="${MEDIA.film}" controls autoplay playsinline style="width:100%;height:100%;object-fit:cover"></video>`};
+document.getElementById("ig").onclick=e=>{const t=e.target.closest("[data-full]");if(!t)return;const d=document.createElement("div");d.className="lb";d.innerHTML=`<img alt="" src="${t.dataset.full}">`;d.onclick=()=>d.remove();document.body.append(d)};
+const b=document.getElementById("burger"),m=document.getElementById("menu");
+b.onclick=()=>{const o=m.classList.toggle("open");b.setAttribute("aria-expanded",o)};
+m.onclick=e=>{if(e.target.tagName==="A"){m.classList.remove("open");b.setAttribute("aria-expanded",false)}};
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
