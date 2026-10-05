@@ -86,3 +86,6 @@ body:after{opacity:.025}
   .price{flex-direction:column;align-items:flex-start}
   .settings{grid-template-columns:1fr}
 }
+
+/* Contrast and brand correction */
+.hero h1,.hero h2,.hero h3,.hero p,.hero .crumb,.hero .crumb a{color:#fff!important}.hero .eyebrow{color:var(--soft)!important}.band h1,.band h2,.band h3,.band p,.band li{color:#fff!important}.cta h1,.cta h2,.cta h3,.cta p{color:#fff!important}.logo{font-family:'Playfair Display',Georgia,serif!important;font-weight:600!important;letter-spacing:.08em!important}.photo{position:relative;overflow:hidden}.photo>img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .7s cubic-bezier(.2,.7,.2,1)}.card:hover .photo>img{transform:scale(1.025)}
