@@ -1,0 +1,43 @@
+/* Amethyst enquiry planner */
+.amethyst-planner{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(20,5,28,.72);backdrop-filter:blur(10px)}
+.amethyst-planner.is-open{display:flex}
+.planner-card{width:min(680px,100%);max-height:min(92vh,820px);overflow:auto;background:var(--bg,#FAF9F6);color:var(--ink,#211A25);border:1px solid rgba(201,162,74,.45);box-shadow:0 30px 90px rgba(20,5,28,.4);position:relative}
+.planner-top{padding:28px 30px 20px;background:linear-gradient(135deg,#3B0A5A,#5B1685);color:#fff}
+.planner-kicker{font-size:10px;letter-spacing:.2em;color:#E3C56E;font-weight:600}
+.planner-top h2{font:600 clamp(28px,5vw,42px)/1.08 'Playfair Display',Georgia,serif;margin:8px 0 7px}
+.planner-top p{font-size:13px;line-height:1.6;color:rgba(255,255,255,.8);margin:0;max-width:540px}
+.planner-close{position:absolute;right:18px;top:18px;width:38px;height:38px;border:1px solid rgba(255,255,255,.45);background:rgba(0,0,0,.14);color:#fff;font-size:24px;line-height:1;cursor:pointer}
+.planner-body{padding:26px 30px 30px}
+.planner-progress{display:flex;gap:6px;margin-bottom:24px}
+.planner-progress span{height:3px;flex:1;background:rgba(59,10,90,.12)}
+.planner-progress span.active{background:#C9A24A}
+.planner-step{display:none}
+.planner-step.active{display:block}
+.planner-step h3{font:600 27px/1.15 'Playfair Display',Georgia,serif;margin:0 0 7px}
+.planner-step .planner-help{font-size:13px;color:var(--mute,#6F6872);margin-bottom:22px}
+.planner-fields{display:grid;gap:16px}
+.planner-fields.two{grid-template-columns:1fr 1fr}
+.planner-field label{display:block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--royal,#5B1685);font-weight:600;margin-bottom:7px}
+.planner-field input,.planner-field textarea,.planner-field select{width:100%;border:1px solid rgba(33,26,37,.18);background:#fff;color:#211A25;padding:13px 14px;font:400 14px/1.45 Montserrat,Arial,sans-serif;border-radius:0;outline:none}
+.planner-field input:focus,.planner-field textarea:focus,.planner-field select:focus{border-color:#C9A24A;box-shadow:0 0 0 2px rgba(201,162,74,.12)}
+.planner-field textarea{min-height:110px;resize:vertical}
+.planner-options{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.planner-option{position:relative}
+.planner-option input{position:absolute;opacity:0;pointer-events:none}
+.planner-option label{display:flex;align-items:center;min-height:52px;padding:13px 14px;border:1px solid rgba(33,26,37,.14);background:#fff;cursor:pointer;font-size:12px;font-weight:600;color:#211A25;transition:.2s}
+.planner-option input:checked+label{border-color:#C9A24A;background:rgba(201,162,74,.09);color:#3B0A5A;box-shadow:inset 0 0 0 1px #C9A24A}
+.planner-nav{display:flex;justify-content:space-between;gap:12px;margin-top:25px}
+.planner-nav .planner-btn{border:1px solid #C9A24A;background:#C9A24A;color:#3B0A5A;padding:13px 19px;font:600 10px/1.2 Montserrat,Arial,sans-serif;letter-spacing:.12em;cursor:pointer}
+.planner-nav .planner-btn.secondary{background:transparent;color:#5B1685}
+.planner-summary{background:rgba(59,10,90,.045);border:1px solid rgba(59,10,90,.1);padding:17px;margin-top:20px}
+.planner-summary p{font-size:12px;line-height:1.7;margin:0}
+.planner-note{font-size:11px;color:var(--mute,#6F6872);margin-top:14px}
+body.planner-locked{overflow:hidden}
+@media(max-width:560px){
+ .amethyst-planner{padding:0}
+ .planner-card{max-height:100vh;height:100%;border:0}
+ .planner-top{padding:25px 20px 18px}
+ .planner-body{padding:22px 20px 24px}
+ .planner-fields.two,.planner-options{grid-template-columns:1fr}
+ .planner-nav{position:sticky;bottom:0;background:var(--bg,#FAF9F6);padding-top:12px}
+}
