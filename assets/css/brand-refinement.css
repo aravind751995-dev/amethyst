@@ -1,0 +1,88 @@
+/* Amethyst final brand refinement */
+:root{
+  color-scheme:light;
+  --deep:#3B0A5A;--royal:#5B1685;--violet:#7B2CBF;
+  --gold:#C9A24A;--soft:#E3C56E;--bg:#FAF9F6;--card:#FFFFFF;
+  --ink:#211A25;--mute:#6F6872;--line:rgba(33,26,37,.11)
+}
+html{font-size:16px}
+body{font-family:Montserrat,Arial,sans-serif;font-size:15px;line-height:1.75;letter-spacing:0;color:var(--ink);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;color:var(--ink);letter-spacing:-.018em}
+p{max-width:68ch}
+.wrap{max-width:1180px;padding-left:28px;padding-right:28px}
+.eyebrow{display:inline-block;font:600 10px/1.4 Montserrat,Arial,sans-serif;letter-spacing:.19em;text-transform:uppercase;color:var(--gold)}
+.btn,.outline{font-family:Montserrat,Arial,sans-serif;font-size:10px;line-height:1.2;font-weight:600;letter-spacing:.13em;text-transform:uppercase}
+.btn{padding:14px 22px}
+header{border-bottom:1px solid rgba(59,10,90,.08);box-shadow:0 8px 28px rgba(33,26,37,.035)}
+.logo{color:var(--deep)!important}
+.links{align-items:center}
+.links a{transition:color .2s ease}
+.hero h1{letter-spacing:-.025em}
+.hero p{line-height:1.75}
+.crumb{opacity:.9}
+main{padding-top:82px;padding-bottom:88px}
+.topline{align-items:flex-end}
+.topline h2{font-size:clamp(34px,4.5vw,48px);line-height:1.08;margin:8px 0 0}
+.count{max-width:360px;line-height:1.6;text-align:right}
+.grid{gap:24px;margin-top:38px}
+.card{border:1px solid rgba(33,26,37,.11);box-shadow:0 10px 32px rgba(33,26,37,.045);transition:transform .35s ease,box-shadow .35s ease}
+.card:hover{transform:translateY(-3px);box-shadow:0 18px 45px rgba(59,10,90,.10)}
+.photo{overflow:hidden}
+.photo img{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.card h3{letter-spacing:-.018em}
+.desc{line-height:1.7}
+.body{padding:26px}
+.price{margin-top:18px;padding-top:16px}
+.tags{margin-top:16px}
+.tags span{line-height:1.35}
+.outline{padding:11px 15px}
+.cta{border:1px solid rgba(201,162,74,.22);box-shadow:0 18px 45px rgba(59,10,90,.08)}
+.cta h2{letter-spacing:-.02em;line-height:1.08}
+.cta p{line-height:1.75}
+footer{font-size:12px}
+footer .foot{line-height:1.7}
+.hero-media{opacity:.42}
+.hero:after{background:linear-gradient(180deg,rgba(59,10,90,.20),rgba(24,4,36,.82))}
+.hero .wrap,.hero-in{max-width:1180px}
+.hero h1{max-width:900px}
+.section{padding-top:82px}
+.section-head h2{letter-spacing:-.02em}
+.section-head p{line-height:1.75}
+.setting,.step,.four>div{box-shadow:0 8px 28px rgba(33,26,37,.035)}
+.secret{box-shadow:0 18px 50px rgba(33,26,37,.10)}
+body:after{opacity:.025}
+@media(max-width:1050px){
+  .links{gap:14px;font-size:11px}
+  header nav>.btn{display:none}
+}
+@media(max-width:760px){
+  .wrap{padding-left:20px;padding-right:20px}
+  nav{min-height:68px}
+  .links{width:100%;justify-content:flex-start;gap:10px 16px;line-height:1.4}
+  .links a{font-size:10px}
+  main{padding-top:64px;padding-bottom:70px}
+  .hero{min-height:570px}
+  .hero .wrap,.hero-in{padding-left:20px;padding-right:20px}
+  .hero h1{font-size:clamp(44px,13vw,68px);line-height:1.02}
+  .hero p{font-size:15px}
+  .topline{align-items:flex-start}
+  .count{text-align:left;max-width:100%}
+  .grid{margin-top:30px;gap:18px}
+  .body{padding:22px}
+  .price{align-items:flex-start}
+  .cta{margin-top:60px;padding:46px 22px}
+  .cta h2{font-size:34px}
+  .section{padding-top:68px}
+  .settings{grid-template-columns:1fr 1fr}
+  .secret{padding:46px 24px}
+}
+@media(max-width:520px){
+  .links{gap:9px 14px}
+  .links a{font-size:9px}
+  .hero{min-height:530px}
+  .hero h1{font-size:clamp(42px,14vw,60px)}
+  .photo:after{left:14px;bottom:12px}
+  .card h3{font-size:24px}
+  .price{flex-direction:column;align-items:flex-start}
+  .settings{grid-template-columns:1fr}
+}
