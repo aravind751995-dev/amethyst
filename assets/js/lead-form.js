@@ -113,7 +113,7 @@
 
   function validStep(){
     if(step === 1){
-      const phone = value('#planner-phone').replace(/\\D/g,'');
+      const phone = value('#planner-phone').replace(/\D/g,'');
       if(!value('#planner-name')) return alert('Please enter your name.'), false;
       if(phone.length < 10) return alert('Please enter a valid contact number.'), false;
       if(!typeValue()) return alert('Please select what you are planning.'), false;
@@ -159,7 +159,7 @@
       'Date: ' + value('#planner-date'),
       'Pickup: ' + value('#planner-pickup'),
       'Additional requirements: ' + notes
-    ].join('\\n');
+    ].join('\n');
     window.open('https://wa.me/919363402164?text=' + encodeURIComponent(message), '_blank', 'noopener');
     closePlanner();
   }
