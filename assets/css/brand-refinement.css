@@ -27,7 +27,7 @@ main{padding-top:82px;padding-bottom:88px}
 .grid{gap:24px;margin-top:38px}
 .card{border:1px solid rgba(33,26,37,.11);box-shadow:0 10px 32px rgba(33,26,37,.045);transition:transform .35s ease,box-shadow .35s ease}
 .card:hover{transform:translateY(-3px);box-shadow:0 18px 45px rgba(59,10,90,.10)}
-.photo{overflow:hidden}
+.photo{overflow:hidden}.photo:after{display:none!important}
 .photo img{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
 .card h3{letter-spacing:-.018em}
 .desc{line-height:1.7}
