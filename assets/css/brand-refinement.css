@@ -98,3 +98,98 @@ header .menu a:hover,header .links a:hover,header nav a:hover{color:var(--violet
 header .btn,header .btn.dark{background:var(--deep)!important;color:#fff!important;border-color:var(--deep)!important}
 header .btn:hover{background:var(--royal)!important;color:#fff!important}
 header .gem{flex:none}
+
+
+/* ===== AMETHYST TEMPLATE WIDE COLOR + TYPE SYSTEM ===== */
+/* Preserve each page layout while keeping one visual language across the site. */
+:root{
+  --deep:#3B0A5A!important;
+  --royal:#5B1685!important;
+  --violet:#7B2CBF!important;
+  --gold:#C9A24A!important;
+  --soft:#E3C56E!important;
+  --bg:#FAF9F6!important;
+  --card:#FFFFFF!important;
+  --ink:#211A25!important;
+  --mute:#6F6872!important;
+  --line:rgba(33,26,37,.11)!important;
+  color-scheme:light!important;
+}
+html,body{font-family:Montserrat,Arial,sans-serif!important}
+body{background:var(--bg)!important;color:var(--ink)!important}
+h1,h2,h3,h4,h5,h6,.logo,.price strong,.num,.step b,.setting h3,.t p{
+  font-family:'Playfair Display',Georgia,serif!important;
+}
+button,input,textarea,select,.btn,.outline,.eyebrow,.links,.menu,.cat,.tags span,.uses span,.count,footer{
+  font-family:Montserrat,Arial,sans-serif!important;
+}
+
+/* Light content surfaces */
+main,section:not(.hero):not(.cta):not(.secret):not(.sur):not(.proc):not(.final):not(.film):not(.band):not(.about-process){
+  background:var(--bg);
+  color:var(--ink);
+}
+.card,.v,.e,.t,.setting,.step,.planner-card,.planner-option label{
+  background:var(--card)!important;
+  color:var(--ink)!important;
+}
+.about-section,.rent{background:var(--card)!important;color:var(--ink)!important}
+.about-copy h2,.about-section h2,.topline h2,.section-head h2,.intro h2,
+.why h2,.card h3,.v h3,.e h3,.r h3,.setting h3,.step h3{
+  color:var(--ink)!important;
+}
+.desc,.lead,.count,.note,.setting p,.step p,.intro p,.section-head p,.about-copy p,
+.r .sm,.r li,.planner-help,.planner-note{color:var(--mute)!important}
+
+/* Dark sections intentionally use light text */
+.hero,.sur,.secret,.proc,.final,.film,.band,.about-process,.cta{
+  color:#fff!important;
+}
+.hero h1,.hero h2,.hero h3,.hero p,.hero .crumb,.hero .crumb a,
+.sur h2,.sur p,.secret h2,.secret p,.proc h2,.proc p,.final h2,.final p,
+.film h2,.film p,.band h1,.band h2,.band h3,.band p,
+.about-process h2,.about-process p,.cta h2,.cta p{
+  color:#fff!important;
+}
+.hero .eyebrow,.sur .eyebrow,.secret .eyebrow,.proc .eyebrow,
+.final .eyebrow,.film .eyebrow,.about-process .eyebrow,.cta .eyebrow{
+  color:var(--soft)!important;
+}
+
+/* Heroes: rich Amethyst base behind media, never compete with white type */
+.hero{background:linear-gradient(135deg,#240636,var(--deep) 58%,var(--royal))!important}
+.hero-media,.hero img,.hero video{z-index:0}
+.hero:after{background:linear-gradient(180deg,rgba(36,6,52,.16),rgba(24,4,36,.86))!important}
+.hero p{color:rgba(255,255,255,.84)!important}
+
+/* Dark feature blocks */
+.sur,.about-process,.secret,.proc,.film,.band,.final{
+  background:linear-gradient(135deg,#240636,var(--deep) 60%,var(--royal))!important;
+}
+.cta{background:linear-gradient(135deg,#24102d,var(--deep))!important}
+
+/* Plan page: calm ivory canvas, white form surface, purple hero */
+.plan-wrap{background:var(--bg)!important}
+.planner-card{background:var(--card)!important;color:var(--ink)!important}
+.planner-body{background:var(--card)!important}
+.planner-field input,.planner-field textarea,.planner-field select,
+.planner-option label{background:#fff!important;color:var(--ink)!important}
+.planner-field label{color:var(--royal)!important}
+.planner-summary{background:rgba(59,10,90,.045)!important;color:var(--ink)!important}
+
+/* Header stays light so the Amethyst wordmark and navigation never merge. */
+header{
+  background:rgba(250,249,246,.98)!important;
+  color:var(--deep)!important;
+  position:sticky!important;
+  top:0!important;
+  border-bottom:1px solid rgba(59,10,90,.12)!important;
+}
+header .logo,header .menu a,header .links a,header nav a{color:var(--deep)!important}
+header .btn,header .btn.dark{background:var(--deep)!important;color:#fff!important;border-color:var(--deep)!important}
+
+/* Cards and image slots stay clean and neutral; imagery provides the character. */
+.card,.v,.e,.r,.t,.setting,.step,.planner-card{
+  border-color:rgba(33,26,37,.11)!important;
+}
+.photo,.ph{background:#eee8f1}
